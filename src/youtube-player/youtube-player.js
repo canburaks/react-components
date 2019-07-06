@@ -6,7 +6,7 @@ export  class YoutubePlayer extends React.Component{
     constructor(props) {
         super(props);
         this.sort = this.props.sort ? this.props.sort : "trailer"
-        this.debug = this.props.debug ? this.props.debug : true;
+        this.debug = this.props.debug ? this.props.debug : false;
         //console.log("asd",props)
         let processedVideos = this.processVideos(this.sortByTag(this.props.videos, this.sort));
         //console.log("process", processedVideos)
@@ -22,7 +22,7 @@ export  class YoutubePlayer extends React.Component{
     loadVideos(){
         if (this.props.videos.length>0){
             let processedVideos = processVideos(sortByTag(this.props.videos, this.sort));
-            console.log("process", processedVideos)
+            this.trace("process", processedVideos)
             this.setState({ videos: [...processedVideos], activeVideo: processedVideos[0]  });
         }
     }
@@ -71,7 +71,7 @@ export  class YoutubePlayer extends React.Component{
     return `https://www.youtube.com/embed/${youtubeId}?rel=0&modestbranding=1&autohide=1&origin=https://pixly.app`
 }
     resize(){
-        console.log("resizing..")
+        //console.log("resizing..")
         var playerBox = document.getElementById(player["active-video-box"]);
         var listBox = document.getElementById(player["list-box"]);
         if (playerBox && playerBox.clientWidth) {
@@ -82,7 +82,7 @@ export  class YoutubePlayer extends React.Component{
     }
     componentDidMount(){
         this.resize()
-        window.addEventListener("resize", this.resize)
+        window.addEventListener("resize", this.resize, {passive:true})
     }
     componentWillUnmount(){
         window.removeEventListener("resize", this.resize)
