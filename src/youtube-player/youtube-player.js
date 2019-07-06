@@ -70,17 +70,23 @@ export  class YoutubePlayer extends React.Component{
     //console.log(`https://www.youtube.com/embed/${youtubeId}?rel=0&modestbranding=1&autohide=1&origin=https://pixly.app`)
     return `https://www.youtube.com/embed/${youtubeId}?rel=0&modestbranding=1&autohide=1&origin=https://pixly.app`
 }
-componentDidMount(){
-    const playerBox = document.getElementById(player["active-video-box"]);
-    const listBox = document.getElementById(player["list-box"]);
-    const iframe = document.getElementById(player["player"])
-    if (playerBox && playerBox.clientWidth){
-        const playerBoxHeight = `${playerBox.clientWidth * 0.61 + 60}px`
-        playerBox.style.height = playerBoxHeight
-        listBox.style.height = playerBoxHeight
-        //iframe.style.height = `${playerBox.clientWidth * 0.61}px`
+    resize(){
+        console.log("resizing..")
+        var playerBox = document.getElementById(player["active-video-box"]);
+        var listBox = document.getElementById(player["list-box"]);
+        if (playerBox && playerBox.clientWidth) {
+            var playerBoxHeight = `${playerBox.clientWidth * 0.61 + 60}px`
+            playerBox.style.height = playerBoxHeight
+            listBox.style.height = playerBoxHeight
+        }
     }
-}
+    componentDidMount(){
+        this.resize()
+        window.addEventListener("resize", this.resize)
+    }
+    componentWillUnmount(){
+        window.removeEventListener("resize", this.resize)
+    }
     
 render(){
 
@@ -96,7 +102,7 @@ render(){
                     src={activeVideo.src}
                     title="youtube player"
                     theme="light" color="red"
-                    width="100%" height={"100%"}
+                    width="100%" height="100%"
                     controls="1"
                     rel="0"
                     frameBorder="0" allowFullScreen
