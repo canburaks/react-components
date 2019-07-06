@@ -214,26 +214,26 @@ svg.feather-sun:hover{
     }
 }
 /* width */
-    ::-webkit-scrollbar {
+#video-player-box ::-webkit-scrollbar {
     width: 10px;
 }
 
 /* Track */
-    ::-webkit-scrollbar-track {
+#video-player-box ::-webkit-scrollbar-track {
     border-radius: 20px;
 }
 
 /* Handle */
-    ::-webkit-scrollbar-thumb {
+#video-player-box ::-webkit-scrollbar-thumb {
     background-color:   var(--bg-color-3) ;
     border-radius: 10px;
 }
 
 /* Handle on hover */
-    ::-webkit-scrollbar-thumb:hover {
+#video-player-box ::-webkit-scrollbar-thumb:hover {
     background:  var(--bg-color-5) ;
 }
-::-webkit-scrollbar-track-piece {
+#video-player-box ::-webkit-scrollbar-track-piece {
     background: transparent; 
     border-radius: 10px;
 

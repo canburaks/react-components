@@ -7,7 +7,7 @@ import {videos} from "./videos";
 export default class App extends Component {
   render () {
     return (
-      <div style={{padding:"10vh"}}>
+      <div style={{padding:"10vh", minHeight:"300vh"}}>
         <YoutubePlayer videos={videos} />
       </div>
     )
