@@ -1,4 +1,5 @@
-# react-reusable-component
+# personal react components archive
+Note: this is not suitable for produciton.
 
 > 
 
