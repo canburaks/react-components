@@ -9,7 +9,9 @@
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-scripts": "^1.1.4",
-    "react-reusable-component": "link:.."
+    "react-reusable-component": "link:..",
+    "react-palette": "^1.0.1"
+        
   },
   "scripts": {
     "start": "react-scripts start",

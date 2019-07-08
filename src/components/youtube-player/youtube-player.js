@@ -1,5 +1,9 @@
 import React, { useState} from "react";
 import player from "./player.css"
+//import { usePalette } from 'react-palette'
+//import Palette from 'react-palette';
+
+//import ColorExtractor  from 'react-color-extractor'
 
 
 export  class YoutubePlayer extends React.Component{
@@ -15,6 +19,7 @@ export  class YoutubePlayer extends React.Component{
         this.state = { 
             videos: processedVideos,
             activeVideo: processedVideos[0],
+            src: processedVideos[0] ? processedVideos[0].thumb : null,
             theme:props.theme ? props.theme : "dark"
          };
          this.trace("state", this.state)
@@ -65,13 +70,14 @@ export  class YoutubePlayer extends React.Component{
 
     getYoutubeSource(youtubeId, start) {
     if (start !== undefined && start !== null) {
-        return `https://www.youtube.com/embed/${youtubeId}?start=${start}&rel=0&modestbranding=1&autohide=1&origin=https://pixly.app`
+        return `https://www.youtube.com/embed/${youtubeId}?start=${start}&rel=0&modestbranding=1&autohide=1&enablejsapi=1&origin=https://pixly.app`
     }
     //console.log(`https://www.youtube.com/embed/${youtubeId}?rel=0&modestbranding=1&autohide=1&origin=https://pixly.app`)
-    return `https://www.youtube.com/embed/${youtubeId}?rel=0&modestbranding=1&autohide=1&origin=https://pixly.app`
+        return `https://www.youtube.com/embed/${youtubeId}?rel=0&modestbranding=1&autohide=1&enablejsapi=1&origin=https://pixly.app`
 }
     resize(){
         //console.log("resizing..")
+
         var playerBox = document.getElementById(player["active-video-box"]);
         var listBox = document.getElementById(player["list-box"]);
         if (playerBox && playerBox.clientWidth) {
@@ -103,7 +109,7 @@ render(){
                     title="youtube player"
                     theme="light" color="red"
                     width="100%" height="100%"
-                    controls="1"
+                    controls="0"
                     rel="0"
                     frameBorder="0" allowFullScreen
                 />
@@ -153,9 +159,9 @@ render(){
                 <p className={player["list-item-text"]}>{v.title}</p>
             </div>
         ))}
-
         </div>
     </div>
+
     )
     }
 };

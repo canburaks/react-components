@@ -59,6 +59,7 @@ svg.feather-sun:hover{
     border:4px solid var(--bg-color-1) !important;
     box-sizing:border-box;
     color:  var(--text-color);
+    margin-bottom:100px;
 }
 #video-player-box.hidden{
     box-shadow: none;
