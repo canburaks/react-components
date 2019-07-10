@@ -1,3 +1,4 @@
+import prepack from 'rollup-plugin-prepack';
 import babel from 'rollup-plugin-babel'
 import commonjs from 'rollup-plugin-commonjs'
 import external from 'rollup-plugin-peer-deps-external'
@@ -7,6 +8,7 @@ import url from 'rollup-plugin-url'
 import svgr from '@svgr/rollup'
 
 import pkg from './package.json'
+
 
 export default {
   input: 'src/index.js',
