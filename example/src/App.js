@@ -1,18 +1,18 @@
 import React, { useState } from "react";
 
-import { YoutubePlayer } from 'react-reusable-component'
+import { YoutubePlayer, TagBox } from 'react-reusable-component'
 import {Icon} from 'react-reusable-component'
 
 import {videos} from "./dev-resources/videos";
 
 const App = (props) => {
-	console.log(Object.keys(Icon))
 	return (
-		<div style={{ padding: "10vh", minHeight: "300vh" }}>
-			
+		<div style={{ padding: "10vh", minHeight: "300vh", background:"red" }}>
+			<Icon.IconImdb size={32}/>
 			<YoutubePlayer videos={videos}>
 
 			</YoutubePlayer>
+			<TagBox tag="mind-fuck-asdas-asda" icon={true} border={true} />
 		</div>
 )
 }
