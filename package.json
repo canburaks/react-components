@@ -7,6 +7,8 @@
   "repository": "canburaks/react-components",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
+  "icon-main": "dist/icon/index.js",
+  "icon-module": "dist/icon/index.es.js",
   "processed": "dist/processed-index.js",
   "jsnext:main": "dist/index.es.js",
   "engines": {
