@@ -1,18 +1,33 @@
 import React, { useState } from "react";
 
-import { YoutubePlayer, TagBox } from 'react-reusable-component'
-import {Icon} from 'react-reusable-component'
+import { YoutubePlayer } from 'react-reusable-component'
+import { NavBar, NavLink } from 'react-reusable-component'
 
+import {IconImdb} from 'react-reusable-component/dist/icon'
 import {videos} from "./dev-resources/videos";
 
 const App = (props) => {
 	return (
-		<div style={{ padding: "10vh", minHeight: "300vh", background:"red" }}>
-			<Icon.IconImdb size={32}/>
-			<YoutubePlayer videos={videos}>
+		<div style={{ minHeight: "300vh", background:"grey" }}>
+			<IconImdb />
+			{/*<NavBar fixed>
+				<NavLink label="Brand name"  brand/>
+				<NavLink label="Lists" />
+				<NavLink className="pad-2x" style={{backgroundColor:"red"}}>
+					Inline Text
+				</NavLink>
+				<NavLink search>
+					<div class="search-container">
+						<form>
+							<input type="text" placeholder="Search.." name="search" />
+								<button type="submit"><i class="fa fa-search"></i></button>
+							</form>
+						</div>
+				</NavLink>
 
-			</YoutubePlayer>
-			<TagBox tag="mind-fuck-asdas-asda" icon={true} border={true} />
+				<NavLink label="Directors" right as="link" to={"/persons"}/>
+				<NavLink label="Profile" right onClick={() => alert("asd")}/>
+			</NavBar>*/}
 		</div>
 )
 }

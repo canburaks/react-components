@@ -78,8 +78,8 @@ export  class YoutubePlayer extends React.Component{
     resize(){
         //console.log("resizing..")
 
-        var playerBox = document.getElementById(player["active-video-box"]);
-        var listBox = document.getElementById(player["list-box"]);
+        var playerBox = document.getElementById("active-video-box");
+        var listBox = document.getElementById("list-box");
         if (playerBox && playerBox.clientWidth) {
             var playerBoxHeight = `${playerBox.clientWidth * 0.61 + 60}px`
             playerBox.style.height = playerBoxHeight
@@ -102,9 +102,9 @@ render(){
     this.trace("render ", this.state )
     const { activeVideo, videos, theme } = this.state;
     return(
-        <div theme={theme} id={player["video-player-box"]} >
-            <div id={player["active-video-box"]} >
-                <iframe id={player["player"]}
+        <div theme={theme} id="video-player-box" >
+            <div id="active-video-box" >
+                <iframe id="player"
                     src={activeVideo.src}
                     title="youtube player"
                     theme="light" color="red"
@@ -114,10 +114,10 @@ render(){
                     frameBorder="0" allowFullScreen
                 />
 
-                <div id={player["video-info-box"]}>
+                <div id="video-info-box">
                 {theme==="dark" &&
                     <svg onClick={() => this.setState({theme:"light"})}
-                        className={player["feather-sun"]}
+                        className="feather-sun"
                         xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" 
                         
                         fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" 
@@ -134,7 +134,7 @@ render(){
                         </svg>}
                 {theme==="light" &&
                         <svg onClick={() => this.setState({ theme: "dark" })}
-                        className={player["feather-moon"]}
+                        className="feather-moon"
                         xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" 
                         
                         fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" 
@@ -144,19 +144,19 @@ render(){
                     }
 
 
-                    <p  id={player["video-title"]}>{activeVideo.title}</p>
+                    <p  id="video-title">{activeVideo.title}</p>
             </div>
         </div>
 
-        <div id={player["list-box"]} >
+        <div id="list-box" >
         {videos.map((v, i)=>(
             <div 
-                className={v === activeVideo ? player["active-list-item"]: player["list-item"]}
+                className={v === activeVideo ?"active-list-item" : "list-item"}
                 onClick={() => this.setState({activeVideo:v})}
                 key={v.id + i}
                 >
-                <img  alt={v.title} title={v.title} src={v.thumb}  className={player["list-item-thumb"]}/>
-                <p className={player["list-item-text"]}>{v.title}</p>
+                <img  alt={v.title} title={v.title} src={v.thumb}  className="list-item-thumb" />
+                <p className="list-item-text">{v.title}</p>
             </div>
         ))}
         </div>

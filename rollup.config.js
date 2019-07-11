@@ -9,9 +9,10 @@ import svgr from '@svgr/rollup'
 import pkg from './package.json'
 
 
-export default {
-  input: 'src/index.js',
-  output: [
+export default
+  [{
+    input: 'src/index.js',
+    output: [
     {
       file: pkg.main,
       format: 'cjs',
@@ -21,13 +22,12 @@ export default {
       file: pkg.module,
       format: 'es',
       sourcemap: true
-    }
-  ],
+    }],
   plugins: [
     external(),
     postcss({
-      modules: true
-    }),
+      extensions: ['.css'],
+      }),
     url(),
     svgr(),
     babel({
@@ -35,6 +35,43 @@ export default {
       plugins: [ 'external-helpers' ]
     }),
     resolve(),
-    commonjs()
+    commonjs({
+      include: 'node_modules/**',
+      namedExports: {
+        'node_modules/react-is/index.js': ['isValidElementType']
+      }
+    })]
+  },
+    {
+      input: 'src/icons/index.js',
+      output: [
+        {
+          file: pkg["icon-main"],
+          format: 'cjs',
+          sourcemap: true
+        },
+        {
+          file: pkg["icon-module"],
+          format: 'es',
+          sourcemap: true
+        }],
+      plugins: [
+        external(),
+        postcss({
+          extensions: ['.css'],
+        }),
+        url(),
+        svgr(),
+        babel({
+          exclude: 'node_modules/**',
+          plugins: ['external-helpers']
+        }),
+        resolve(),
+        commonjs({
+          include: 'node_modules/**',
+          namedExports: {
+            'node_modules/react-is/index.js': ['isValidElementType']
+          }
+        })]
+    }
   ]
-}
