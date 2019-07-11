@@ -65,14 +65,14 @@ import {IconTwitter} from 'cbs-react-components/dist/icon'
 class Example extends React.Component {
   render () {
     return (
-      <IconTwitter 
-        size="28" 
-        fill="black" 
-        stroke="blue" 
-        strokeWidth="1" 
-        className="tw-share" 
-        onClick={() => alert("clicked")}
-      />
+     	 <IconTwitter 
+			size="28" 
+			fill="black" 
+			stroke="blue" 
+			strokeWidth="1" 
+			className="tw-share" 
+			onClick={() => alert("clicked")}
+		/>
     )
   }
 }
@@ -97,13 +97,13 @@ import { NavBar, NavLink } from 'cbs-react-components'
 const MyNav = (props) => {
 	return (
 			<NavBar fixed>
-        <NavLink  brand>
-          <a href="/home/">Brand Name</a> 
-        </NavLink>
+				<NavLink  brand>
+					<a href="/home/">Brand Name</a> 
+				</NavLink>
 
 				<NavLink className="your-class-name">
 					<a href="/link1">link1</a> 
-        </NavLink>
+        		</NavLink>
         
 				<NavLink search>
 					<div class="search-container">
@@ -114,13 +114,13 @@ const MyNav = (props) => {
 						</div>
 				</NavLink>
 
-        <NavLink right>
-        		<a href="/right-link1">right-link1</a> 
-        </NavLink>
-        <NavLink right onClick={() => alert("asd")}>
-        		<button href="/right-button">right-link1</button> 
-        </NavLink>
-      </NavBar>
+				<NavLink right>
+						<a href="/right-link1">right-link1</a> 
+				</NavLink>
+				<NavLink right onClick={() => alert("asd")}>
+						<button href="/right-button">right-link1</button> 
+				</NavLink>
+      	</NavBar>
   )
 }
 ```
@@ -136,10 +136,10 @@ import { SideButton, SideButton } from 'cbs-react-components'
 const SideNav = (props) =>{
   return(
     	<SideNavButtons  >
-				<SideButton before={<p>?:</p>}>Lists</SideButton>
-				<SideButton styles={{backgroundColor:"red"}}> Directors</SideButton>
-				<SideButton className="my-classname">Movies</SideButton>
-			</SideNavButtons>
+			<SideButton before={<p>?:</p>}>Lists</SideButton>
+			<SideButton styles={{backgroundColor:"red"}}> Directors</SideButton>
+			<SideButton className="my-classname">Movies</SideButton>
+		</SideNavButtons>
   )
 }
 ```
@@ -157,15 +157,15 @@ import { SearchBox } from 'cbs-react-components'
 */
 const MySearchBox1 = (props) =>{
   return(
-				<SearchBox 
-					className="my-search-box" 
-					item={{image:"poster", text:"name" }}
-          query={myQuery}
-          placeholder={"Movies..."} // default 'Search'
-          transparent
-          onClick={(value) => console.log("'onClick function ->", value)}
-					onSubmit={values => console.log("onSubmit ->", values)}
-					/>
+		<SearchBox 
+			className="my-search-box" 
+			item={{image:"poster", text:"name" }}
+			query={myQuery}
+			placeholder={"Movies..."} // default 'Search'
+			transparent
+			onClick={(value) => console.log("'onClick function ->", value)}
+			onSubmit={values => console.log("onSubmit ->", values)}
+		/>
     )
 }
 /*
@@ -197,14 +197,14 @@ var movies = [
 */
 const MySearchBox2 = (props) =>{
   return(
-				<SearchBox 
-					class="my-static-search-box" 
-          data={countries}
-          placeholder={"Countries..."} // default 'Search'
-          animate
-          onClick={(value) => console.log("onClick function ->", value)}
-					onSubmit={values => console.log("onSubmit ->", values)}
-				/>
+		<SearchBox 
+			class="my-static-search-box" 
+			data={countries}
+			placeholder={"Countries..."} // default 'Search'
+			animate
+			onClick={(value) => console.log("onClick function ->", value)}
+			onSubmit={values => console.log("onSubmit ->", values)}
+		/>
     )
 }
 
@@ -222,4 +222,4 @@ var countries = ["Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Angu
 
 ## License
 
-MIT © [w3schools](https://github.com/canburaks)
+MIT © [Can Burak S.](https://github.com/canburaks)
