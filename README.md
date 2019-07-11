@@ -53,31 +53,76 @@ const videos = [
 ```
 
 ### Icon
-Icons are adapted from [feather-icons](https://github.com/feathericons/feather).
-
+Icons are mostly adapted  from [feather-icons](https://github.com/feathericons/feather).
+Also there are some other icons.
 
 
 
 ```jsx
 import React from 'react'
-import {Icon} from 'react-reusable-component'
+import {IconTwitter} from 'react-reusable-component/dist/icon'
 
 class Example extends React.Component {
   render () {
     return (
-      <Icon.twitter size="28" fill="black" stroke="blue" strokeWidth="1"/>
+      <IconTwitter 
+        size="28" 
+        fill="black" 
+        stroke="blue" 
+        strokeWidth="1" 
+        className="tw-share" 
+        onClick={() => alert("clicked")}
+      />
     )
   }
 }
 
-console.log(Object.keys(Icon))
-/* prints
-[ "arrowLeft", "arrowRight", "bookmark", "check", "circle", "facebook", "film",
-  "github", "heart", "home", "lock", "login", "logout", "menu", "messageSquare", 
-  "moreHorizontal", "moreVertical", "plus", "search", "settings", "slash", "sliders", 
-  "star", "tag", "toggleLeft", "toggleRight", "tv", "twitter", "type", "userCheck", 
-  "userMinus", "userPlus", "userX", "user", "users", "videoOff", "video", "xCircle", "x", "youutube"
+/*Other Icons
+[ "IconArrowLeft", "IconArrowRight", "IconBookmark", "IconCheck", "IconCircle", 
+  "IconFacebook", "IconFilm", "IconGithub", "IconHeart", "IconHome","IconImdb","IconInstagram",
+  "IconLock", "IconLogin", "IconLogout", "IconMenu", "IconMessageSquare", "IconMoreHorizontal",
+  "IconMoreVertical", "IconPlus", "IconSearch", "IconSettings", "IconSlash", "IconSliders", 
+  "IconStar", "IconTag", "IconToggleLeft", "IconToggleRight", "IconTv", "IconTwitter", "IconType", "IconUserCheck", "IconUserMinus", "IconUserPlus", "IconUserX", "IconUser", "IconUsers",
+  "IconVideoOff", "IconVideo", "IconXCircle", "IconX", "IconYouutube"
 ]
+```
+
+### Navbar
+A Simple Responsive Navbar.
+```jsx
+import React from 'react'
+import { NavBar, NavLink } from 'react-reusable-component'
+
+
+const MyNav = (props) => {
+	return (
+			<NavBar fixed>
+        <NavLink  brand>
+          <a href="/home/">Brand Name</a> 
+        </NavLink>
+
+				<NavLink className="your-class-name">
+					<a href="/link1">link1</a> 
+        </NavLink>
+        
+				<NavLink search>
+					<div class="search-container">
+						<form>
+							<input type="text" placeholder="Search.." name="search" />
+								<button type="submit">Submit</button>
+							</form>
+						</div>
+				</NavLink>
+
+        <NavLink right>
+        		<a href="/right-link1">right-link1</a> 
+        </NavLink>
+        <NavLink right onClick={() => alert("asd")}>
+        		<button href="/right-button">right-link1</button> 
+        </NavLink>
+      </NavBar>
+  )
+}
 ```
 
 

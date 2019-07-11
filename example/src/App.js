@@ -9,7 +9,31 @@ import {videos} from "./dev-resources/videos";
 const App = (props) => {
 	return (
 		<div style={{ minHeight: "300vh", background:"grey" }}>
-			<IconImdb />
+			<NavBar fixed>
+				<NavLink brand>
+					<a href="/home/">Brand Name</a>
+				</NavLink>
+
+				<NavLink className="your-class-name">
+					<a href="/link1">link1</a>
+				</NavLink>
+
+				<NavLink search>
+					<div class="search-container">
+						<form>
+							<input type="text" placeholder="Search.." name="search" />
+							<button type="submit">Submit</button>
+						</form>
+					</div>
+				</NavLink>
+
+				<NavLink right>
+					<a href="/right-link1">right-link1</a>
+				</NavLink>
+				<NavLink right onClick={() => alert("asd")}>
+					<button href="/right-button">right-button</button>
+				</NavLink>
+			</NavBar>
 			{/*<NavBar fixed>
 				<NavLink label="Brand name"  brand/>
 				<NavLink label="Lists" />
