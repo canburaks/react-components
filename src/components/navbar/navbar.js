@@ -43,7 +43,7 @@ export class NavBar extends Component{
         console.log("LeftItems", this.LeftItems)
         const { toggleOpen } = this.state;
         return(
-            <div className={toggleOpen ? `${this.className} + responsive`: this.className} id="myTopnav">
+            <nav className={toggleOpen ? `${this.className} + responsive`: this.className} id="myTopnav">
                 <div className="nav-left-box">
                     {this.BrandItems.length > 0 && this.BrandItems[0]}
                     {this.LeftItems.length > 0 && this.LeftItems.map(link => link)}
@@ -68,7 +68,7 @@ export class NavBar extends Component{
                     <circle cx="12" cy="19" r="1"></circle>
                 </svg>
 
-            </div>
+            </nav>
         )
     }
 }
@@ -97,7 +97,7 @@ export const NavLink = (props) => {
     }
     const className = setClassName()
     return (
-        <div className={className}>
+        <div className={className} onClick={props.onClick}>
             {props.label ? props.label : props.children}
         </div>
     )
