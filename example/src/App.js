@@ -12,8 +12,23 @@ const App = (props) => {
 	}
 
 	return (
-		<div style={{ minHeight: "100vh", backgroundColor:"grey" , display:"block", padding:40}}>
+		<div style={{ minHeight: "100vh", backgroundColor:"grey" , display:"block"}}>
+			<NavBar fixed>
+				<NavLink brand>
+					<a href="/home/">Brand Name</a>
+				</NavLink>
 
+				<NavLink >
+					<a href="/link1">link1</a>
+				</NavLink>
+
+				<NavLink right>
+					<a href="/right-link1">right-link1</a>
+				</NavLink>
+				<NavLink right onClick={() => alert("asd")}>
+					<button href="/right-button">right-link2</button>
+				</NavLink>
+			</NavBar>
 		</div>
 	)
 }

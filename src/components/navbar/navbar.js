@@ -6,8 +6,6 @@ export class NavBar extends Component{
         super(props);
         
         this.BrandItems = this.props.children.filter(child => Object.getOwnPropertyNames(child.props).includes("brand"))
-        this.NavItems = this.props.children.filter(child => !Object.getOwnPropertyNames(child.props).includes("brand"))
-
         this.SearchItem = this.props.children.filter(child => Object.getOwnPropertyNames(child.props).includes("search"))
         this.RightItems = this.props.children.filter(child => Object.getOwnPropertyNames(child.props).includes("right"))
         this.LeftItems = this.props.children.filter(child => 
@@ -23,12 +21,31 @@ export class NavBar extends Component{
         }   
 
         this.className = this.setClassName()
-        this.RightItemsAll =[...this.SearchItem, ...this.RightItems]
-        this.RightItemsAllReverse = [...this.RightItems, ...this.SearchItem]
+        this.RightItemsAll = this.orderRightItems()
+        this.RightItemsAllReverse = this.orderRightItems(true)
 
 
     }
-
+    orderRightItems(reverse=false){
+        var result = [];
+        if (reverse){
+            if (this.SearchItem && this.SearchItem.length>0){
+                result = [...this.SearchItem]
+            }
+            if (this.RightItems && this.RightItems.length > 0) {
+                result = [...this.RightItems, ...result]
+            }
+        }
+        else{
+            if (this.SearchItem && this.SearchItem.length > 0) {
+                result = [...this.SearchItem]
+            }
+            if (this.RightItems && this.RightItems.length > 0) {
+                result = [...result, ...this.RightItems]
+            }
+        }
+        return result
+    }
     setClassName() {
         var cls = this.props.className ? this.props.className : "";
         if (this.props.fixed) {
@@ -79,7 +96,7 @@ export class NavBar extends Component{
 export const NavLink = (props) => {
     console.log(props)
     function setClassName(){
-        var typeName = "nav-link";
+        var typeName = props.className ? `${props.className} nav-link` : `nav-link`
         if(props.brand){
             typeName = typeName + " brand"
         }
@@ -92,8 +109,7 @@ export const NavLink = (props) => {
         else{
             typeName = typeName + " left"
         }
-        var className = props.className ? `${props.className} ${typeName}` : `${typeName}`
-        return className
+        return typeName
     }
     const className = setClassName()
     return (
