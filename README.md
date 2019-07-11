@@ -60,7 +60,7 @@ Also there are some other icons.
 
 ```jsx
 import React from 'react'
-import {IconTwitter} from 'react-reusable-component/dist/icon'
+import {IconTwitter} from 'cbs-react-components/dist/icon'
 
 class Example extends React.Component {
   render () {
@@ -79,7 +79,7 @@ class Example extends React.Component {
 
 /*Other Icons
 [ "IconArrowLeft", "IconArrowRight", "IconBookmark", "IconCheck", "IconCircle", 
-  "IconFacebook", "IconFilm", "IconGithub", "IconHeart", "IconHome","IconImdb","IconInstagram",
+  "IconFacebook", "IconFilm", "IconGithub", "IconGlobe", "IconHeart", "IconHome","IconImdb","IconInstagram",
   "IconLock", "IconLogin", "IconLogout", "IconMenu", "IconMessageSquare", "IconMoreHorizontal",
   "IconMoreVertical", "IconPlus", "IconSearch", "IconSettings", "IconSlash", "IconSliders", 
   "IconStar", "IconTag", "IconToggleLeft", "IconToggleRight", "IconTv", "IconTwitter", "IconType", "IconUserCheck", "IconUserMinus", "IconUserPlus", "IconUserX", "IconUser", "IconUsers",
@@ -91,7 +91,7 @@ class Example extends React.Component {
 A Simple Responsive Navbar.
 ```jsx
 import React from 'react'
-import { NavBar, NavLink } from 'react-reusable-component'
+import { NavBar, NavLink } from 'cbs-react-components'
 
 
 const MyNav = (props) => {
@@ -126,7 +126,100 @@ const MyNav = (props) => {
 ```
 
 
+### Hoverable Sidebar Buttons
+This is an enhanced example of [w3schools](https://www.w3schools.com/default.asp) [Hoverable Sidenav Buttons](https://www.w3schools.com/howto/howto_css_sidenav_buttons.asp) example.
+
+```jsx
+import React from "react";
+import { SideButton, SideButton } from 'cbs-react-components'
+
+const SideNav = (props) =>{
+  return(
+    	<SideNavButtons  >
+				<SideButton before={<p>?:</p>}>Lists</SideButton>
+				<SideButton styles={{backgroundColor:"red"}}> Directors</SideButton>
+				<SideButton className="my-classname">Movies</SideButton>
+			</SideNavButtons>
+  )
+}
+```
+
+
+### SearchBox
+This is an enhanced example of [w3schools](https://www.w3schools.com/default.asp) [Autocomplete](https://www.w3schools.com/howto/howto_js_autocomplete.asp) example.
+
+```jsx
+import React from "react";
+import { SearchBox } from 'cbs-react-components'
+
+/*
+----  EXAMPLE 1 --------
+*/
+const MySearchBox1 = (props) =>{
+  return(
+				<SearchBox 
+					className="my-search-box" 
+					item={{image:"poster", text:"name" }}
+          query={myQuery}
+          placeholder={"Movies..."} // default 'Search'
+          transparent
+          onClick={(value) => console.log("'onClick function ->", value)}
+					onSubmit={values => console.log("onSubmit ->", values)}
+					/>
+    )
+}
+/*
+ For remote data we need pass query function that will get input from inside of SearchBox
+*/
+function myQuery(input) {
+	return new Promise(resolve => {
+		setTimeout(() => {
+			const queryResults = movies.filter(movie => movie.name.toLowerCase().includes(input));
+			resolve(queryResults)
+		}, 300)
+	});
+}
+
+var movies = [
+	{ name: "Space Odyssey", id: 924, poster: "2001.jpg"},
+	{ name: "Amarcord", id: 7089, poster: "amarcord.jpg"}
+]
+/*
+- item prop: if your query result is an array of objects, tell which properties will show in image source      and text. Given example; In autocomplete list item look image source in poster property of movie result,
+  and text in name propert of movie result.
+
+- onClick prop: What will do when clicked to autocomplete list item. In example 
+  clicked item will print ---> 'onClick function -> { name: "Space Odyssey", id: 924, poster:2001.jpg"}'
+
+
+/*
+----  EXAMPLE 2 --------
+*/
+const MySearchBox2 = (props) =>{
+  return(
+				<SearchBox 
+					class="my-static-search-box" 
+          data={countries}
+          placeholder={"Countries..."} // default 'Search'
+          animate
+          onClick={(value) => console.log("onClick function ->", value)}
+					onSubmit={values => console.log("onSubmit ->", values)}
+				/>
+    )
+}
+
+var countries = ["Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Anguilla", "Antigua & Barbuda", "Argentina", "Armenia", "Aruba", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bermuda", "Bhutan", "Bolivia", "Bosnia & Herzegovina", "Botswana", "Brazil", "British Virgin Islands", "Brunei", "Bulgaria", "Burkina Faso", "Burundi", "Cambodia"];
+
+/*
+- data prop; If local data will provide use this. No need query function.
+
+- onSubmit prop: on form submit case. For example if we search "al" and then press enter
+  it will print --> 'onSubmit -> ["Albania", "Algeria", "Australia"]'
+*/
+
+
+```
 
 ## License
 
-MIT © [canburaks](https://github.com/canburaks)
+MIT © [w3schools](https://github.com/canburaks)
