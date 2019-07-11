@@ -1,0 +1,142 @@
+:root{
+    --placeholder-color:#ffff;
+    --placeholder-focus-color:rgb(56, 56, 56);
+}
+
+/*the container must be positioned relative:*/
+.autocomplete {
+  position: relative;
+  display: inline-block;
+  width:180px;
+
+}
+.input-container {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  justify-content: flex-end;
+  width: auto;
+  margin-bottom: 15px;
+}
+.input-icon{
+    position: absolute;
+    right:3px;
+    color:rgb(80, 80, 80)
+}
+
+input {
+  border: 1px solid transparent;
+  background-color: #f1f1f1;
+  padding: 10px;
+  font-size: 16px;
+}
+input[type=submit] {
+  color: #fff;
+  cursor: pointer;
+}
+
+/* -----Input----- */
+input[type=text]{
+    width: 100%;
+    background-color: #f1f1f1;
+    -webkit-transition: width 0.3s ease-in-out;
+    transition: width 0.3s ease-in-out;
+    float:right;
+
+}
+input[type=text].animate{
+    width: 65%;
+}
+
+input[type=text].transparent {
+  background-color: transparent;
+  border-bottom:1px solid #ffff;
+}
+
+input[type=text]:focus {
+    width: 100%;
+    border-radius: 8px;
+    background-color: #f1f1f1;
+}
+
+input[type=text].animate:focus {
+    width: 100%;
+    border-radius: 8px;
+    background-color: #f1f1f1;
+}
+input[type=text].transparent:focus {
+    border-radius: 8px;
+    background-color: #fff;
+
+}
+
+::placeholder { /* Firefox, Chrome, Opera */ 
+    color: var(--placeholder-color); 
+} 
+  
+:-ms-input-placeholder { /* Internet Explorer 10-11 */ 
+    color: var(--placeholder-color); 
+} 
+  
+::-ms-input-placeholder { /* Microsoft Edge */ 
+    color: var(--placeholder-color); 
+} 
+input[type=text].transparent:focus  ::placeholder { /* Firefox, Chrome, Opera */ 
+    color: var(--placeholder-focus-color); 
+} 
+  
+input[type=text].transparent:focus  :-ms-input-placeholder { /* Internet Explorer 10-11 */ 
+    color: var(--placeholder-focus-color); 
+} 
+  
+input[type=text].transparent:focus  ::-ms-input-placeholder { /* Microsoft Edge */ 
+    color: var(--placeholder-focus-color); 
+} 
+
+/*
+*/
+.autocomplete-items {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  /*position the autocomplete items to be the same width as the container:*/
+  top: 100%;
+  left: 0;
+  right: 0;
+}
+
+.autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #fff; 
+  border-bottom: 1px solid #d4d4d4; 
+}
+
+/*when hovering an item:*/
+.autocomplete-items div:hover {
+  background-color: #e9e9e9; 
+}
+
+/*when navigating through the items using the arrow keys:*/
+.autocomplete-active {
+  background-color: DodgerBlue !important; 
+  color: #ffffff; 
+}
+
+
+
+/*--------------ITEMS ---------*/
+.ac-list-item{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+.ac-list-item.active{
+  background-color: #e9e9e9; 
+}
+.ac-item-img {
+    height:60px;
+    width:40px;
+}
