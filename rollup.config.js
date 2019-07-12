@@ -23,6 +23,10 @@ export default
       format: 'es',
       sourcemap: true
     }],
+    external: [
+      'react',
+      'react-dom',
+    ],
   plugins: [
     external(),
     postcss({
@@ -55,6 +59,10 @@ export default
           format: 'es',
           sourcemap: true
         }],
+      external: [
+        'react',
+        'react-dom',
+      ],
       plugins: [
         external(),
         postcss({

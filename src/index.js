@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-
+import React from 'react'
+import { useState } from "react";
 
 export { YoutubePlayer } from "./components/youtube-player/youtube-player";
 export { NavBar, NavLink } from "./components/navbar/navbar"
