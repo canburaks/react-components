@@ -13,7 +13,7 @@ const App = (props) => {
   }
 
   return (
-    <div style={{ minHeight: "100vh", backgroundColor: "grey", display: "block" }}>
+    <div style={{ minHeight: "200vh", backgroundColor: "grey", display: "block" }}>
       <NavBar fixed>
         <NavLink brand>
           <a href="/home/">Brand Name</a>
@@ -30,7 +30,6 @@ const App = (props) => {
             query={query}
             onClick={(value) => console.log("parent onClick ->", value)}
             onSubmit={values => console.log("parent onSubmit ->", values)}
-            transparent
             animate
           />
         </NavLink>
@@ -41,7 +40,15 @@ const App = (props) => {
 
       <br/>
       <div style={{height:"40vh", width:"100%", display:"flex",alignItems:"center", flexDirection:"column", justifyContent:"center"}}>
-
+        <SearchBox
+          class="static"
+          item={{ image: "poster", text: "name" }}
+          query={query}
+          onClick={(value) => console.log("parent onClick ->", value)}
+          onSubmit={values => console.log("parent onSubmit ->", values)}
+          transparent
+          animate
+        />
         </div>
       </div>
   )

@@ -53,7 +53,10 @@
 .topnav .icon {
   display: none;
 }
-
+.nav-link.brand:hover{
+  text-decoration: underline;
+  color: white;
+}
 
 .nav-link:hover{
   text-decoration: underline;
@@ -67,9 +70,13 @@ a{
 
 @media screen and (max-width: 620px) {
 
+	.topnav .nav-right-box .search{
+      margin-right: auto;
+  }
+
+
     .topnav .nav-left-box .left,
-	.topnav .nav-right-box .right,
-	.topnav .nav-right-box .search
+	.topnav .nav-right-box .right
     {
         display: none;
     }
