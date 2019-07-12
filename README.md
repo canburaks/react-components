@@ -96,31 +96,31 @@ import { NavBar, NavLink } from 'cbs-react-components'
 
 const MyNav = (props) => {
 	return (
-			<NavBar fixed>
-				<NavLink  brand>
-					<a href="/home/">Brand Name</a> 
-				</NavLink>
+		<NavBar fixed>
+			<NavLink  brand>
+				<a href="/home/">Brand Name</a> 
+			</NavLink>
 
-				<NavLink className="your-class-name">
-					<a href="/link1">link1</a> 
-        		</NavLink>
-        
-				<NavLink search>
-					<div class="search-container">
-						<form>
-							<input type="text" placeholder="Search.." name="search" />
-								<button type="submit">Submit</button>
-							</form>
-						</div>
-				</NavLink>
+			<NavLink className="your-class-name">
+				<a href="/link1">link1</a> 
+			</NavLink>
+	
+			<NavLink search>
+				<div class="search-container">
+					<form>
+						<input type="text" placeholder="Search.." name="search" />
+							<button type="submit">Submit</button>
+						</form>
+					</div>
+			</NavLink>
 
-				<NavLink right>
-						<a href="/right-link1">right-link1</a> 
-				</NavLink>
-				<NavLink right onClick={() => alert("asd")}>
-						<button href="/right-button">right-link1</button> 
-				</NavLink>
-      	</NavBar>
+			<NavLink right>
+					<a href="/right-link1">right-link1</a> 
+			</NavLink>
+			<NavLink right onClick={() => alert("asd")}>
+					<button href="/right-button">right-link1</button> 
+			</NavLink>
+	</NavBar>
   )
 }
 ```
@@ -130,6 +130,7 @@ const MyNav = (props) => {
 This is an enhanced example of [w3schools](https://www.w3schools.com/default.asp) [Hoverable Sidenav Buttons](https://www.w3schools.com/howto/howto_css_sidenav_buttons.asp) example.
 
 ```jsx
+
 import React from "react";
 import { SideButton, SideButton } from 'cbs-react-components'
 
@@ -142,6 +143,7 @@ const SideNav = (props) =>{
 		</SideNavButtons>
   )
 }
+
 ```
 
 
@@ -162,7 +164,7 @@ const MySearchBox1 = (props) =>{
 			item={{image:"poster", text:"name" }}
 			query={myQuery}
 			placeholder={"Movies..."} // default 'Search'
-			transparent
+			animate
 			onClick={(value) => console.log("'onClick function ->", value)}
 			onSubmit={values => console.log("onSubmit ->", values)}
 		/>

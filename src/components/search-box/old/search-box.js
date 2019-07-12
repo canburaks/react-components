@@ -9,7 +9,7 @@ export const SearchBox = (props) => {
     const [open, setOpen] = useState(false)
     const [input, setInput] = useState("")
     const [values, setValues] = useState(vals)
-    const [activeItem, setActiveItem] = useState(null)
+    const [activeItem, setActiveItem] = useState(0)
 
     const inputClassName = setInputClassName()
 
@@ -33,9 +33,7 @@ export const SearchBox = (props) => {
 
     async function inputHandler(e) {
         //if autocomplete list is open, close it
-        if (open){
-            setOpen(false)
-        }
+        
         setInput(e.target.value)
         //if data is local and supplied
         if (props.data) {
@@ -64,24 +62,16 @@ export const SearchBox = (props) => {
         if (value) {
             props.onClick(value);
         }
-        setInput("");
-        setValues([]);
         setOpen(false)
+        setValues([]);
+        setInput("");
         setActiveItem(0);
     }
-
     function onKeyDown(e){
-        // User pressed the enter key, update the input and close the
-        // suggestions
         if (e.keyCode === 13) {
             e.preventDefault();
-            if (activeItem===null){
-                props.onSubmit(values);
-            }
-            else {
-                props.onClick(values[activeItem])
-            }
-            setActiveItem(null);
+            props.onSubmit(values);
+            setActiveItem(0);
             setOpen(false)
             setValues([]);
             setInput("");
@@ -95,11 +85,7 @@ export const SearchBox = (props) => {
         }
         // User pressed the down arrow, increment the index
         else if (e.keyCode === 40) {
-            if (activeItem === null){
-                setActiveItem(0)
-                return;
-            }
-            else if (activeItem === values.length -1) {
+            if (activeItem - 1 === values.length) {
                 return;
             }
 
@@ -127,12 +113,17 @@ export const SearchBox = (props) => {
         }
     }
 
-    function createListItem(value, active=false) {
+    const createAutoCompleteList = (values) => (
+        <div className="autocomplete-items" >
+            {values.map(v => createListItem(v))}
+        </div>
+    )
+    function createListItem(value) {
         const isString = typeof value === "string";
 
         if (isString) return (
             <div
-                className={active===true ? "ac-list-item active" : "ac-list-item"}
+                className={value == activeItem ? "ac-list-item active" : "ac-list-item"}
                 onClick={(e) => clickHandler(e, value)}
             >
                 <p className="ac-item-text">{value}</p>
@@ -145,7 +136,7 @@ export const SearchBox = (props) => {
             text = value[props.item.text];
         }
         return (
-            <div className={active===true ? "ac-list-item active" : "ac-list-item"}
+            <div className={value == activeItem ? "ac-list-item active" : "ac-list-item"}
                 onClick={(e) => clickHandler(e, value)}
             >
                 {imageSrc && <img src={imageSrc} className="ac-item-img" />}
@@ -156,29 +147,21 @@ export const SearchBox = (props) => {
 
     return(
         <div className={props.className ? `autocomplete ${props.className}` : "autocomplete"}>
-            <input
-                id="searchbox-input" type="text" className={inputClassName} value={input}
-                name="myCountry" placeholder={props.placeholder ? props.placeholder : "Search"}
-                onChange={e => inputHandler(e)}
-                onKeyDown={e => onKeyDown(e)}
-            />
-            <IconSearch 
-                size={24} 
-                strokeWidth={3} className="input-icon" 
-                onClick={e => submitHandler(e)} title={"Get results!"} />
-            {open && 
-            <div className="autocomplete-items" >
-                {values.map((v,i )=> {
-                    console.log(i)
-                    if (i === activeItem) return createListItem(v, true)
-                    else return createListItem(v, false)
-                    })}
+                <div className="input-container">
+                    <form autoComplete="off" onSubmit={e => submitHandler(e)} >
+                    <input
+                        id="searchbox-input" type="text" className={inputClassName}
+                        name="myCountry" placeholder={props.placeholder ? props.placeholder : "Search"}
+                        onChange={e => inputHandler(e)}
+                    />
+                    </form>
+                    <IconSearch size={24} strokeWidth={3} className="input-icon" onClick={e => submitHandler(e)} />
+                </div>
+                {open && createAutoCompleteList(values)}
             </div>
-            }
-        </div>
     )
 }
-const IconSearch = ({ className = "", size = 24, stroke = "currentColor", strokeWidth = 2, fill = "none", onClick = null, title=null }) => (<svg title={title} onClick={onClick} xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill={fill} stroke={stroke} strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round" className={className + " feather feather-search"}><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>)
+const IconSearch = ({ className = "", size = 24, stroke = "currentColor", strokeWidth = 2, fill = "none", onClick = null }) => (<svg onClick={onClick} xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill={fill} stroke={stroke} strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round" className={className + " feather feather-search"}><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>)
 
 /*
 
