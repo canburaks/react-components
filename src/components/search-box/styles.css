@@ -1,24 +1,29 @@
 :root{
-    --placeholder-color:#ffff;
+    --placeholder-color:rgba(255, 255, 255, 0.465);
     --placeholder-focus-color:rgb(56, 56, 56);
+    --input-min-width:130px;
+    --input-width:180px;
 }
 
 /*the container must be positioned relative:*/
 .autocomplete {
   position: relative;
-  display: inline-block;
-  width:180px;
-
+  display: flex;
+  flex-direction: column;
+  width:var(--input-width);
+  padding:0;
 }
 .input-container {
   display: -ms-flexbox; /* IE10 */
   display: flex;
   justify-content: flex-end;
-  width: auto;
-  margin-bottom: 15px;
+  align-items: center;
+  width:var(--input-width);
+  padding:0;
 }
 .input-icon{
     position: absolute;
+    top:3px;
     right:3px;
     color:rgb(80, 80, 80)
 }
@@ -26,7 +31,7 @@
 input {
   border: 1px solid transparent;
   background-color: #f1f1f1;
-  padding: 10px;
+  padding:4px 5px;
   font-size: 16px;
 }
 input[type=submit] {
@@ -41,32 +46,42 @@ input[type=text]{
     -webkit-transition: width 0.3s ease-in-out;
     transition: width 0.3s ease-in-out;
     float:right;
-
+    border-radius: 8px;
+    color: #f1f1f1;
 }
 input[type=text].animate{
-    width: 65%;
+      width:var(--input-min-width);
+
 }
 
 input[type=text].transparent {
   background-color: transparent;
   border-bottom:1px solid #ffff;
+    border-radius: 0;
 }
 
 input[type=text]:focus {
     width: 100%;
     border-radius: 8px;
+    border-color:transparent !important;
     background-color: #f1f1f1;
 }
-
-input[type=text].animate:focus {
+input:focus {
     width: 100%;
+    border-radius: 8px;
+    border-color:transparent;
+    background-color: #f1f1f1;
+}
+input[type=text].animate:focus {
+  width:var(--input-width);
     border-radius: 8px;
     background-color: #f1f1f1;
 }
 input[type=text].transparent:focus {
     border-radius: 8px;
-    background-color: #fff;
-
+    background-color: rgba(255, 255, 255, 0.356);
+    border-bottom:1px solid #ffff;
+    border-radius: 0;
 }
 
 ::placeholder { /* Firefox, Chrome, Opera */ 
@@ -97,21 +112,20 @@ input[type=text].transparent:focus  ::-ms-input-placeholder { /* Microsoft Edge 
 .autocomplete-items {
   position: absolute;
   border: 1px solid #d4d4d4;
+  background-color: #fff; 
   border-bottom: none;
   border-top: none;
-  z-index: 99;
+  overflow: hidden;
   /*position the autocomplete items to be the same width as the container:*/
-  top: 100%;
-  left: 0;
-  right: 0;
+  top: 35px;
+  left: 0px;
+  width:90%;
+  padding:0;
+  margin: 0;
+  border-radius: 4px;
+  z-index: 1500;
 }
 
-.autocomplete-items div {
-  padding: 10px;
-  cursor: pointer;
-  background-color: #fff; 
-  border-bottom: 1px solid #d4d4d4; 
-}
 
 /*when hovering an item:*/
 .autocomplete-items div:hover {
@@ -128,15 +142,25 @@ input[type=text].transparent:focus  ::-ms-input-placeholder { /* Microsoft Edge 
 
 /*--------------ITEMS ---------*/
 .ac-list-item{
-    display: flex;
+    position: relative;
+    top:0;
+    left:0;
+    display: flex !important;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
+    border-radius: 4px;
+    background-color: #fff; 
+    color:#000000;
+    width:90%;
+  z-index: 1500;
+
 }
 .ac-list-item.active{
-  background-color: #e9e9e9; 
+
 }
 .ac-item-img {
-    height:60px;
-    width:40px;
+    height:50px;
+    width:32px;
+    margin-right:4px;
 }
