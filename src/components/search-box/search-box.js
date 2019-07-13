@@ -165,7 +165,8 @@ export const SearchBox = (props) => {
             <IconSearch 
                 size={24} 
                 strokeWidth={3} className="input-icon" 
-                onClick={e => submitHandler(e)} title={"Get results!"} />
+                onClick={e => submitHandler(e)} title={"Get results!"}
+                 />
             {open && 
             <div className="autocomplete-items" >
                 {values.map((v,i )=> {

@@ -17,6 +17,7 @@
   width:var(--input-width);
   padding:0;
   height:40px;
+  
 }
 
 .input-icon{
@@ -27,7 +28,7 @@
 
 }
 
-input {
+input#searchbox-input {
   position: relative;
   background-color: #f1f1f1;
   padding: 4px;
@@ -35,7 +36,7 @@ input {
 }
 
 /* -----Input----- */
-input[type=text]{
+input#searchbox-input[type=text]{
     width: 100%;
     -webkit-transition: width 0.3s ease-in-out;
     transition: width 0.3s ease-in-out;
@@ -46,12 +47,12 @@ input[type=text]{
     border-bottom:2px solid var(--color-contrast);
     border-radius: 0;
 }
-input[type=text].animate{
+input#searchbox-input[type=text].animate{
       width:var(--input-min-width);
 
 }
 
-input[type=text]:focus {
+input#searchbox-input[type=text]:focus {
     width: 100%;
     border-bottom:2px solid var(--color-contrast);
     background-color: transparent;
@@ -70,21 +71,21 @@ input[type=text]:focus {
 ::-ms-input-placeholder { /* Microsoft Edge */ 
     color: var(--placeholder-color); 
 } 
-input[type=text]:focus  ::placeholder { /* Firefox, Chrome, Opera */ 
+input#searchbox-input[type=text]:focus  ::placeholder { /* Firefox, Chrome, Opera */ 
     color: var(--placeholder-focus-color); 
 } 
   
-input[type=text]:focus  :-ms-input-placeholder { /* Internet Explorer 10-11 */ 
+input#searchbox-input[type=text]:focus  :-ms-input-placeholder { /* Internet Explorer 10-11 */ 
     color: var(--placeholder-focus-color); 
 } 
   
-input[type=text]:focus  ::-ms-input-placeholder { /* Microsoft Edge */ 
+input#searchbox-input[type=text]:focus  ::-ms-input-placeholder { /* Microsoft Edge */ 
     color: var(--placeholder-focus-color); 
 } 
 
 /*
 */
-.autocomplete-items {
+.autocomplete .autocomplete-items {
   position: absolute;
   border:none;
   display: flex;
