@@ -66,12 +66,12 @@ class Example extends React.Component {
   render () {
     return (
      	 <IconTwitter 
-			size="28" 
-			fill="black" 
-			stroke="blue" 
-			strokeWidth="1" 
-			className="tw-share" 
-			onClick={() => alert("clicked")}
+		    size="28" 
+		    fill="black" 
+		    stroke="blue" 
+		    strokeWidth="1" 
+		    className="tw-share" 
+		    onClick={() => alert("clicked")}
 		/>
     )
   }
@@ -97,29 +97,29 @@ import { NavBar, NavLink } from 'cbs-react-components'
 const MyNav = (props) => {
 	return (
 		<NavBar fixed>
-			<NavLink  brand>
-				<a href="/home/">Brand Name</a> 
-			</NavLink>
-
-			<NavLink className="your-class-name">
-				<a href="/link1">link1</a> 
-			</NavLink>
-	
-			<NavLink search>
-				<div class="search-container">
-					<form>
-						<input type="text" placeholder="Search.." name="search" />
-							<button type="submit">Submit</button>
-						</form>
-					</div>
-			</NavLink>
-
-			<NavLink right>
-					<a href="/right-link1">right-link1</a> 
-			</NavLink>
-			<NavLink right onClick={() => alert("asd")}>
-					<button href="/right-button">right-link1</button> 
-			</NavLink>
+            <NavLink  brand>
+                <a href="/home/">Brand Name</a> 
+            </NavLink>
+            
+            <NavLink className="your-class-name">
+                <a href="/link1">link1</a> 
+            </NavLink>
+            
+            <NavLink search>
+                <div class="search-container">
+            	    <form>
+            		    <input type="text" placeholder="Search.." name="search" />
+            			<button type="submit">Submit</button>
+            		</form>
+            	</div>
+            </NavLink>
+            
+            <NavLink right>
+                <a href="/right-link1">right-link1</a> 
+            </NavLink>
+            <NavLink right onClick={() => alert("asd")}>
+                <button href="/right-button">right-link1</button> 
+            </NavLink>
 	</NavBar>
   )
 }
@@ -136,11 +136,11 @@ import { SideButton, SideButton } from 'cbs-react-components'
 
 const SideNav = (props) =>{
   return(
-    	<SideNavButtons  >
-			<SideButton before={<p>?:</p>}>Lists</SideButton>
-			<SideButton styles={{backgroundColor:"red"}}> Directors</SideButton>
-			<SideButton className="my-classname">Movies</SideButton>
-		</SideNavButtons>
+        <SideNavButtons  >
+            <SideButton before={<p>?:</p>}>Lists</SideButton>
+            <SideButton styles={{backgroundColor:"red"}}> Directors</SideButton>
+            <SideButton className="my-classname">Movies</SideButton>
+        </SideNavButtons>
   )
 }
 
@@ -160,13 +160,13 @@ import { SearchBox } from 'cbs-react-components'
 const MySearchBox1 = (props) =>{
   return(
 		<SearchBox 
-			className="my-search-box" 
-			item={{image:"poster", text:"name" }}
-			query={myQuery}
-			placeholder={"Movies..."} // default 'Search'
-			animate
-			onClick={(value) => console.log("'onClick function ->", value)}
-			onSubmit={values => console.log("onSubmit ->", values)}
+		    className="my-search-box" 
+		    item={{image:"poster", text:"name" }}
+		    query={myQuery}
+		    placeholder={"Movies..."} // default 'Search'
+		    animate
+		    onClick={(value) => console.log("'onClick function ->", value)}
+		    onSubmit={values => console.log("onSubmit ->", values)}
 		/>
     )
 }
@@ -174,17 +174,17 @@ const MySearchBox1 = (props) =>{
  For remote data we need pass query function that will get input from inside of SearchBox
 */
 function myQuery(input) {
-	return new Promise(resolve => {
-		setTimeout(() => {
-			const queryResults = movies.filter(movie => movie.name.toLowerCase().includes(input));
-			resolve(queryResults)
-		}, 300)
+    return new Promise(resolve => {
+        setTimeout(() => {
+            const queryResults = movies.filter(movie => movie.name.toLowerCase().includes(input));
+            resolve(queryResults)
+        }, 300)
 	});
 }
 
 var movies = [
-	{ name: "Space Odyssey", id: 924, poster: "2001.jpg"},
-	{ name: "Amarcord", id: 7089, poster: "amarcord.jpg"}
+    { name: "Space Odyssey", id: 924, poster: "2001.jpg"},
+    { name: "Amarcord", id: 7089, poster: "amarcord.jpg"}
 ]
 /*
 - item prop: if your query result is an array of objects, tell which properties will show in image source      and text. Given example; In autocomplete list item look image source in poster property of movie result,
@@ -199,14 +199,14 @@ var movies = [
 */
 const MySearchBox2 = (props) =>{
   return(
-		<SearchBox 
-			class="my-static-search-box" 
-			data={countries}
-			placeholder={"Countries..."} // default 'Search'
-			animate
-			onClick={(value) => console.log("onClick function ->", value)}
-			onSubmit={values => console.log("onSubmit ->", values)}
-		/>
+        <SearchBox 
+            class="my-static-search-box" 
+            data={countries}
+            placeholder={"Countries..."} // default 'Search'
+            animate
+            onClick={(value) => console.log("onClick function ->", value)}
+            onSubmit={values => console.log("onSubmit ->", values)}
+        />
     )
 }
 
