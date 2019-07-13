@@ -65,14 +65,14 @@ import {IconTwitter} from 'cbs-react-components/dist/icon'
 class Example extends React.Component {
   render () {
     return (
-     	 <IconTwitter 
-		    size="28" 
-		    fill="black" 
-		    stroke="blue" 
-		    strokeWidth="1" 
-		    className="tw-share" 
-		    onClick={() => alert("clicked")}
-		/>
+        <IconTwitter 
+            size="28" 
+            fill="black" 
+            stroke="blue" 
+            strokeWidth="1" 
+            className="tw-share" 
+            onClick={() => alert("clicked")}
+        />
     )
   }
 }
@@ -96,31 +96,31 @@ import { NavBar, NavLink } from 'cbs-react-components'
 
 const MyNav = (props) => {
 	return (
-		<NavBar fixed>
+        <NavBar fixed>
             <NavLink  brand>
                 <a href="/home/">Brand Name</a> 
             </NavLink>
-            
+        
             <NavLink className="your-class-name">
                 <a href="/link1">link1</a> 
             </NavLink>
-            
+        
             <NavLink search>
                 <div class="search-container">
-            	    <form>
-            		    <input type="text" placeholder="Search.." name="search" />
-            			<button type="submit">Submit</button>
-            		</form>
-            	</div>
+                    <form>
+                        <input type="text" placeholder="Search.." name="search" />
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
             </NavLink>
-            
+        
             <NavLink right>
                 <a href="/right-link1">right-link1</a> 
             </NavLink>
             <NavLink right onClick={() => alert("asd")}>
                 <button href="/right-button">right-link1</button> 
             </NavLink>
-	</NavBar>
+        </NavBar>
   )
 }
 ```
@@ -155,19 +155,18 @@ import React from "react";
 import { SearchBox } from 'cbs-react-components'
 
 /*
-----  EXAMPLE 1 --------
+----  EXAMPLE 1 - (Remote data) --------
 */
 const MySearchBox1 = (props) =>{
   return(
-		<SearchBox 
-		    className="my-search-box" 
-		    item={{image:"poster", text:"name" }}
-		    query={myQuery}
-		    placeholder={"Movies..."} // default 'Search'
-		    animate
-		    onClick={(value) => console.log("'onClick function ->", value)}
-		    onSubmit={values => console.log("onSubmit ->", values)}
-		/>
+    <SearchBox 
+        item={{image:"poster", text:"name" }}
+        query={myQuery}
+        placeholder={"Movies..."} // default 'Search'
+        animate
+        onClick={(value) => console.log("'onClick function ->", value)}
+        onSubmit={values => console.log("onSubmit ->", values)}
+    />
     )
 }
 /*
@@ -195,18 +194,16 @@ var movies = [
 
 
 /*
-----  EXAMPLE 2 --------
+----  EXAMPLE 2 (local data)--------
 */
 const MySearchBox2 = (props) =>{
-  return(
-        <SearchBox 
-            class="my-static-search-box" 
-            data={countries}
-            placeholder={"Countries..."} // default 'Search'
-            animate
-            onClick={(value) => console.log("onClick function ->", value)}
-            onSubmit={values => console.log("onSubmit ->", values)}
-        />
+    return(
+      <SearchBox 
+          data={countries}
+          placeholder={"Countries..."} // default 'Search'
+          onClick={(value) => console.log("onClick function ->", value)}
+          onSubmit={values => console.log("onSubmit ->", values)}
+      />
     )
 }
 

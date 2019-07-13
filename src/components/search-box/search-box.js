@@ -175,7 +175,7 @@ export const SearchBox = (props) => {
                     else return createListItem(v, false)
                     })}
             </div>
-            }
+        }
         </div>
     )
 }
