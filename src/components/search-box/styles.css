@@ -129,7 +129,7 @@ input#searchbox-input[type=text]:focus  ::-ms-input-placeholder { /* Microsoft E
     justify-content: flex-start;
     align-items: center;
     border-radius: 4px;
-    background-color:var(--navbar-color);
+    background:var(--navbar-color);
     color:var(--navbar-link-color);
     width:100%;
     font-size: 12px;
