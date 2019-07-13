@@ -24,8 +24,9 @@
 svg.input-icon{
     position: absolute;
     top:-1px;
-    right:0px;
-    width:20%;
+    right:0;
+    height:40px;
+    width:40px;
     max-height:70% !important;
     color: var(--color-contrast);
 

@@ -153,26 +153,33 @@ export const SearchBox = (props) => {
             </div>
         )
     }
-
+    const SubmitIcon = () =>{
+        if (props.icon){
+            return (
+                <div className="input-icon" onClick={e => submitHandler(e)} title="Get results!">
+                    {props.icon}
+                </div>
+            )}
+        else return(
+            <svg
+                title={"Get results!"}
+                stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="input-icon"
+                onClick={e => submitHandler(e)} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            >
+                <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+        )
+    }
     return(
         <div className={props.className ? `autocomplete ${props.className}` : "autocomplete"}>
             <input
                 id="searchbox-input" type="text" className={inputClassName} value={input}
-                name="myCountry" placeholder={props.placeholder ? props.placeholder : "Search"}
+                name="myCountry" placeholder={props.placeholder ? props.placeholder : ""}
                 onChange={e => inputHandler(e)}
                 onKeyDown={e => onKeyDown(e)}
             />
-            <svg title={"Get results!"} 
-                stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className={"input-icon"}
-                onClick={e => submitHandler(e)} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" 
-                >
-                    <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            <SubmitIcon />
 
-            <IconSearch 
-                size={24} 
-                strokeWidth={3} className="input-icon" 
-                onClick={e => submitHandler(e)} title={"Get results!"}
-                 />
             {open && 
             <div className="autocomplete-items" >
                 {values.map((v,i )=> {

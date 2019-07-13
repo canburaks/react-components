@@ -46,6 +46,12 @@ const App = (props) => {
           query={query}
           onClick={(value) => console.log("parent onClick ->", value)}
           onSubmit={values => console.log("parent onSubmit ->", values)}
+          icon={<svg
+            title={"Get results!"} fill="none"
+            stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className={"input-icon"}
+          >
+            <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>}
           transparent
           animate
         />
