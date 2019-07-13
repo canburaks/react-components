@@ -1,5 +1,110 @@
+:root{
+  --navbar-height: 50px;
+  --navbar-color: rgba(31, 31, 31, 0.95);
+  --navbar-brand-color: rgb(255, 255, 255);
+  --navbar-link-color:  #d3cce3;
+
+}
+
+.topnav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    overflow-y: visible;
+    background-color:var(--navbar-color);
+    height:var(--navbar-height);
+    width:100vw;
+	padding: 0 -5vw 0 3vw;
+    box-shadow: 0 0 5px 3px rgba(0,0,0,0);
+    z-index: 1400;
+}
+.topnav.fixed{
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+}
+.nav-link{
+    padding: 0 8px;
+    margin:0 4px;
+	margin-bottom:4px;
+	color:var(--navbar-link-color);
+}
+.nav-link.search{
+  margin-right: 8px;
+  padding-bottom:4px;
+  z-index: 2000 !important;
+
+}
+.nav-link.brand{
+	color:var(--navbar-brand-color);
+}
+.topnav > .left-box,
+.topnav > .right-box{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+.topnav .icon {
+  display: none;
+    transition: transform .2s ease-in;
+}
+.topnav > .toggle-menu{
+	display: none;
+}
+.nav-link.brand:hover{
+  text-decoration: none;
+  color: white;
+}
+
+.nav-link:hover{
+  text-decoration: underline;
+  color: white;
+}
+a{
+	text-decoration: none;
+	color: white;
+}
+
+@media screen and (max-width: 620px) {
+    .topnav > .left-box > .nav-link:not(.brand), 
+    .topnav > .right-box > .nav-link:not(.search){
+      display: none;
+    } 
+    .topnav .icon {
+        float: right;
+        display: block;
+        margin-top: 2%;
+        margin-bottom:2%;
+    }
+    .nav-link.search{
+        float: right;
+    }
+
+}
+@media screen and (max-width: 620px) {
+    .topnav > .toggle-menu{
+		position: absolute;
+		width: 100vw;
+		top: var(--navbar-height);
+		height:auto;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+	    background-color:var(--navbar-color);
+	}
+	.toggle-menu > .nav-link {
+		margin:8px;
+	}
+
+}
 
 
+
+
+/*
 .topnav{
     display: flex;
     flex-direction: row;
@@ -69,24 +174,23 @@ a{
 
 
 @media screen and (max-width: 620px) {
-
-	.topnav .nav-right-box .search{
-      margin-right: auto;
+  
+  .topnav .nav-left-box .nav-link.brand{
+    display: block;
   }
-
-
+	.topnav .nav-right-box .search{
+      margin-right: 5vw !important;
+  }
     .topnav .nav-left-box .left,
 	.topnav .nav-right-box .right
     {
         display: none;
     }
-    .topnav .nav-left-box .nav-link.brand{
-      display: block;
-    }
   .topnav .icon  {
       float: right;
       display: block;
-      margin-top: 8px;
+      margin-top: 2%;
+      margin-bottom:2%;
       position: absolute;
       right: 0;
       top: 0;
