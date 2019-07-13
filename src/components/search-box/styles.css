@@ -1,8 +1,8 @@
 :root{
     --placeholder-color:rgba(255, 255, 255, 0.465);
     --placeholder-focus-color:rgb(56, 56, 56);
-    --input-min-width:100px;
-    --input-width:150px;
+    --input-min-width:120px;
+    --input-width:180px;
     --color-dark: #232526;
     --color-light: #d3cce3;
     --color-base:#232526;
@@ -21,11 +21,11 @@
 
 }
 
-.input-icon{
+svg.input-icon{
     position: absolute;
     top:-1px;
-    right:10px;
-    width:10%;
+    right:0px;
+    width:20%;
     max-height:70% !important;
     color: var(--color-contrast);
 
