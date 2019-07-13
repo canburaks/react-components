@@ -112,6 +112,7 @@ input#searchbox-input[type=text]:focus  ::-ms-input-placeholder { /* Microsoft E
   margin: 0;
   border-radius: 4px;
   background-color:var(--navbar-color);
+  background:var(--navbar-color);
   z-index: 1500 !important;
   cursor: pointer;
 }
