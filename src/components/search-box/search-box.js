@@ -1,8 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from "react";
 
-import ReactDOM from 'react-dom';
-import styles from "./styles.css"
+import "./styles.css"
 
 export const SearchBox = (props) => {
     const vals = props.data ? props.data : []

@@ -1,9 +1,5 @@
-import React, { useState} from "react";
-import player from "./player.css"
-//import { usePalette } from 'react-palette'
-//import Palette from 'react-palette';
-
-//import ColorExtractor  from 'react-color-extractor'
+import React from "react";
+import  "./player.css"
 
 
 export  class YoutubePlayer extends React.Component{
