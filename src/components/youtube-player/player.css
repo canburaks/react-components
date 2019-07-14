@@ -95,18 +95,18 @@ svg.feather-sun:hover{
 }
 .list-item{
     width:95%;
-    height:80px;
+    height:100px;
     position:relative;
     display:flex;
-    flex-direction:row;
+    flex-direction:column;
     justify-content:flex-start;
     align-items:center;
     border:1px solid transparent;
     border-bottom:1px solid var(--bg-color-2);
     border-radius:4px;
     font-weight:600;
-    margin:8px 2%;
-    padding:8px 0 8px 0;
+    margin:4px 2%;
+    padding:0 4px;
     box-sizing:border-box;
     cursor:pointer;
 
@@ -122,31 +122,29 @@ svg.feather-sun:hover{
 .active-list-item{
     background-color: var(--bg-color-2) !important;
     width:95%;
-    height:80px;
+    height:100px;
     position:relative;
     display:flex;
-    flex-direction:row;
+    flex-direction:column;
     justify-content:flex-start;
     align-items:center;
     border:1px solid transparent;
     border-bottom:1px solid var(--bg-color-2);
     border-radius:4px;
     font-weight:600;
-    margin:8px 2%;
-    padding:8px 0 8px 0;
+    padding:0 4px;
     box-sizing:border-box;
     cursor:pointer;
 }
 .list-item-thumb{
     height:50px;
-    width:90px;
-    padding:4px;
+    width:120px;
+    padding:4px 4px 0 4px;
 
 }
 .list-item-text{
     width:100%;
-    padding:4px;
-    font-size:85%;
+    font-size:80%;
     white-space: nowrap; 
     overflow: hidden;
     text-align:center;

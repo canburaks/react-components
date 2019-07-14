@@ -54,7 +54,7 @@ input#searchbox-input[type=text]{
 
 input#searchbox-input[type=text].animate{
       width:var(--input-min-width);
-      opacity: 0.7;
+      opacity: 0.6;
 }
 
 
