@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from "react";
 
-import "./styles.css"
+import "./search-box.css"
 
 export const SearchBox = (props) => {
     const vals = props.data ? props.data : []
