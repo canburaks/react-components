@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom';
-import "./styles.css"
+import "./sidenav-buttons.css"
 
 
 export const SideNavButtons = (props) =>{

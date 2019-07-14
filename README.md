@@ -133,15 +133,15 @@ import { ProgressBar } from 'cbs-react-components'
 
 
 <ProgressBar 
-    value={65} 							//required
-    max={100} 							//default 100
-    height={30}							//default 30(px)
-    fontSize={16}						//default 16(px)
-    borderRadius={4}					//default 4(px)
-    backgroundColor={"white"}			//default white
-    progressColor={"#4CAF50"}			//default #4CAF50
-    textColor={"white"}					//default white
-    percent								//options-> percent,onlyvalue nolabel 
+    value={65}                          //required
+    max={100}                           //default 100
+    height={30}                         //default 30(px)
+    fontSize={16}                       //default 16(px)
+    borderRadius={4}                    //default 4(px)
+    backgroundColor={"white"}           //default white
+    progressColor={"#4CAF50"}           //default #4CAF50
+    textColor={"white"}                 //default white
+    percent                             //options-> percent,onlyvalue nolabel 
     spectrum={{ start: 0, stop: 120, tranparency: 1 }} //default none
 />
 
@@ -149,15 +149,15 @@ const Example = (props) =>{
     return(
         <div style={{ height: "100%", display: "block", backgroundColor: "grey" }}>
             <ProgressBar 
-                value={65} 							//required
-                max={100} 							//default 100
-                height={30}							//default 30(px)
-                fontSize={16}						//default 16(px)
-                borderRadius={4}					//default 4(px)
-                backgroundColor={"white"}			//default white
-                progressColor={"#4CAF50"}			//default #4CAF50
-                textColor={"white"}					//default white
-                percent								//options-> percent,onlyvalue nolabel 
+                value={65}                //required
+                max={100}                 //default 100
+                height={30}               //default 30(px)
+                fontSize={16}             //default 16(px)
+                borderRadius={4}          //default 4(px)
+                backgroundColor={"white"} //default white
+                progressColor={"#4CAF50"} //default #4CAF50
+                textColor={"white"}       //default white
+                percent                   //options-> percent,onlyvalue nolabel 
             />
         </div>
     )
@@ -171,18 +171,18 @@ import { CircularProgress } from 'cbs-react-components'
 
 
 <CircularProgress
-    value={65} 							//required
-    max={80} 							//default 100
-    size={60}							//default 80
-    strokeWidth={6}						//default 6
-    stroke={"rgb(69, 72, 233)"} 		//defaul rgb(69, 72, 233) 	
-    baseStroke={"rgb(40, 40, 40)"}	    //default none
-    fill={"rgb(240, 240, 240)"} 		//default rgb(42, 40, 40);
+    value={65}                           //required
+    max={80}                             //default 100
+    size={60}                            //default 80
+    strokeWidth={6}                      //default 6
+    stroke={"rgb(69, 72, 233)"}          //defaul rgb(69, 72, 233) 	
+    baseStroke={"rgb(40, 40, 40)"}       //default none
+    fill={"rgb(240, 240, 240)"}          //default rgb(42, 40, 40);
     
-    textColor={"#232526"}		        //default rgb(20,20,20)
-    fontSize={18} 						//default size/5 (if fontSize > size/4 than fontSize=size/5)
-    fontWeight={600}					//default 600
-    percent							    //options-> percent,onlyvalue nolabel 
+    textColor={"#232526"}                //default rgb(20,20,20)
+    fontSize={18}                        //default size/5 (if fontSize > size/4 than fontSize=size/5)
+    fontWeight={600}                     //default 600
+    percent                              //options-> percent,onlyvalue nolabel 
     title={`You made great progress !!!`}
     spectrum={{ start: 0, stop: 120, tranparency: 1 }} //default none
 />
@@ -208,11 +208,11 @@ const Example = (props) =>{
 }
 /*
 	NOTES;(for ProgressBar and CircleProgress): 
-	- Choose only one of percent, onlyvalue or nolabel.
-	- Spectrum is hsla color values: given range of hue values stroke color will fall between the range.
-		E.g; spectrum={{start:0, stop:180, transparency=0.8}} and value={40} max={80} 
-		will take ((40/80)*(180-0))=90 hue value and color will be hsla(90, 100%, 50%, 1).
-		default transparency value is 1.
+        - Choose only one of percent, onlyvalue or nolabel.
+        - Spectrum is hsla color values: given range of hue values stroke color will fall between the range.
+            E.g; spectrum={{start:0, stop:180, transparency=0.8}} and value={40} max={80} 
+            will take ((40/80)*(180-0))=90 hue value and color will be hsla(90, 100%, 50%, 1).
+            default transparency value is 1.
 */
 ```
 

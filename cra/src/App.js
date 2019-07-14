@@ -3,7 +3,8 @@ import React from "react";
 
 //import { YoutubePlayer, SideNavButtons, SideButton, SearchBox } from 'cbs-react-components'
 //import { NavBar, NavLink } from 'cbs-react-components'
-import { ProgressBar, CircularProgress } from 'cbs-react-components'
+//import { ProgressBar, CircularProgress } from 'cbs-react-components'
+//import { Tooltip } from 'cbs-react-components'
 
 //import { IconImdb } from 'cbs-react-components/dist/icon'
 //import { videos } from "./dev-resources/videos";
@@ -15,31 +16,7 @@ const App = (props) => {
 
 	return (
 		<div style={{ minHeight: "200vh", display: "block", backgroundColor: "grey", padding: "10vw" }}>
-			<CircularProgress
-				value={65} 							//required
-				max={100} 							//default 100
-				size={80}							//default 80
-				strokeWidth={10}					//default 6
-				stroke={"rgb(142, 241, 125)"} 		//defaul rgb(69, 72, 233) 	
-				baseStroke={"rgb(40, 40, 40)"}	    //default none
-				fill={"rgb(40, 40, 40)"} 			//default rgb(42, 40, 40);
 
-				textColor={"rgb(211, 204, 227)"}		        //default rgb(20,20,20)
-				fontSize={18} 						//default size/5 (if fontSize > size/4 than fontSize=size/5)
-				fontWeight={600}					//default 600
-				percent								//options-> percent,onlyvalue nolabel 
-			/>
-			<ProgressBar 
-				value={65} 							//required
-				max={100} 							//default 100
-				height={30}							//default 30(px)
-				fontSize={16}						//default 16(px)
-				borderRadius={4}					//default 4(px)
-				backgroundColor={"white"}			//default white
-				progressColor={"#4CAF50"}			//default #4CAF50
-				textColor={"white"}					//default white
-				percent								//options-> percent,onlyvalue nolabel 
-			/>
 		</div>
 	)
 }
