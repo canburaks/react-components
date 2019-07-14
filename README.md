@@ -8,8 +8,11 @@ Note: this is not suitable for produciton.
 ## Install
 
 ```bash
-npm install --save react-reusable-component
-```
+npm install --save cbs-react-components
+or
+```bash
+yarn add cbs-react-components
+``````
 
 ## Youtube Player
 
