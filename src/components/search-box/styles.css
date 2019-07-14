@@ -4,7 +4,7 @@
     --input-min-width:120px;
     --input-width:180px;
     --color-dark: #232526;
-    --color-light: #d3cce3;
+    --color-light: rgb(211, 204, 227);
     --color-base:#232526;
     --color-contrast: #d3cce3;
 }
