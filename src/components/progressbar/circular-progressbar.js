@@ -47,7 +47,7 @@ export const CircularProgress = (props) => {
 
     return (
         <div className="progress-div" style={{ position: "relative", width: size, height: size }} title={title}>
-            <svg
+            <svg id="circle-progress-svg" style={{padding:0}}
                 height={size}
                 width={size}
                 className=".progress-ring"
