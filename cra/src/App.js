@@ -7,9 +7,10 @@ import React from "react";
 //import { Tooltip } from 'cbs-react-components'
 //import { TransparentText } from 'cbs-react-components'
 //import { TextCollapse } from 'cbs-react-components'
-import { Dropdown } from 'cbs-react-components'
+//import { Dropdown } from 'cbs-react-components'
+import { Popup } from 'cbs-react-components'
 
-import { IconHome } from 'cbs-react-components/dist/icon'
+//import { IconHome } from 'cbs-react-components/dist/icon'
 //import { videos } from "./dev-resources/videos";
 
 const App = (props) => {
@@ -18,15 +19,17 @@ const App = (props) => {
 	}
 
 	return (
-		<div style={{ minHeight: "200vh", display: "block",color:"white", backgroundColor: "rgba(31, 31, 31, 0.95)", padding: "10vw" }}>
-			<Dropdown
-				horizontal={-60}
-				self={<IconHome size={24} />}
-				>
-				<a href="#">Link 1</a>
-				<a href="#">Link 2</a>
-				<a href="#">Link 3</a>
-			</Dropdown>
+		<div style={{ minHeight: "200vh", display: "block",color:"white", 
+			backgroundColor: "rgba(31, 31, 31, 0.95)",
+			padding: "20vw" }}>
+			<Popup side={"top"} text={"tooltip"} className="my-classname" title="click" id="my-id">top</Popup>
+			<br/>
+			<Popup side={"left"} text={"tooltip"}>left</Popup>
+			<br/>
+			<Popup side={"right"} text={"tooltip"}>right</Popup>
+			<br/>
+			<Popup side={"bottom"} text={"tooltip"}>bottom</Popup>
+
 		</div>
 	)
 }
@@ -55,6 +58,19 @@ var movies = [
 var countries = ["Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Anguilla", "Antigua & Barbuda", "Argentina", "Armenia", "Aruba", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bermuda", "Bhutan", "Bolivia", "Bosnia & Herzegovina", "Botswana", "Brazil", "British Virgin Islands", "Brunei", "Bulgaria", "Burkina Faso", "Burundi", "Cambodia"];
 
 /*
+-----Popup---------------
+<Popup 
+	side={"top"} 
+	text={"tooltip"} 
+	className="my-classname" 
+	title="click" 
+	id="my-id"
+	>
+	top
+</Popup>
+
+
+
 -----DropDown----------------
 <Dropdown
 	horizontal={-60}

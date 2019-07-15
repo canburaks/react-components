@@ -1,6 +1,4 @@
 import React from 'react'
-import {useRef, useEffect} from 'react'
-
 import "./transparent-text.css"
 
 export const TransparentText = ({
