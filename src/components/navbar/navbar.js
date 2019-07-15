@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from "react";
 
-import styles from "./navbar.css"
+import "./navbar.css"
 
 export const NavBar = (props) => {
     const [ toggleOpen, setToggle] = useState(false);

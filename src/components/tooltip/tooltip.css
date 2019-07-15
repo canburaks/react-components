@@ -2,91 +2,102 @@
 .tooltip {
   position: relative;
   display: inline-block;
-  border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
 }
+.tooltip .tooltiptext {
+  visibility: hidden;
+  background-color: black;
+  color: #fff;
+  text-align: center;  
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 5;
 
+}
 
 /* Show the tooltip text when you mouse over the tooltip container */
 
-
-
-/* TOP */
-.tooltip.top .tooltiptext{
-  bottom: 125%;
-  left: 50%;
-  margin-left: -60px;
-}
-
-.tooltip.top .tooltiptext::after {
-  content: "";
-  position: absolute;
-  border-style: solid;
-  border-color: #555 transparent transparent transparent;
-  top: 100%;
-  left: 50%;
-  margin-left: -5px;
-  border-width: 5px;
-}
-
-/*LEFT */
-.tooltip .tooltiptext.left{
-  top: -5px;
-  right: 125%; 
-
-}
-.tooltip .tooltiptext.left::after {
-  content: "";
-  position: absolute;
-  border-style: solid;
-  border-color: #555 transparent transparent transparent;
-  top: 50%;
-  right: 100%; /* To the left of the tooltip */
-  margin-top: -5px;
-  border-width: 5px;
-}
-
-/*RIGHT */
-.tooltip .tooltiptext.right{
-  top: -5px;
-  left: 105%; 
-
-}
-.tooltip .tooltiptext.right::after {
-  content: "";
-  position: absolute;
-  border-style: solid;
-  border-color: #555 transparent transparent transparent;
-  top: 50%;
-  right: 100%; /* To the left of the tooltip */
-  margin-top: -5px;
-  border-width: 5px;
-}
-
-/*BOTTOM */
-.tooltip .tooltiptext.bottom {
-  visibility: hidden;
+/*-----RIGHT------- */
+.tooltip.right .tooltiptext {
   width: 120px;
-  background-color: black;
-  color: #fff;
   text-align: center;
   border-radius: 6px;
   padding: 5px 0;
+  /* Position the tooltip */
+  top: -5px;
+  left: 115%;
+}
+.tooltip.right .tooltiptext::after {
+  content: " ";
   position: absolute;
-  z-index: 1;
-  bottom: 150%;
+  top: 50%;
+  right: 100%; /* To the left of the tooltip */
+  margin-top: -10px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent black transparent transparent;
+}
+/*-----LEFT------- */
+.tooltip.left .tooltiptext {
+  width: 120px;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  /* Position the tooltip */
+  top: -5px;
+  right: 115%;
+}
+.tooltip.left .tooltiptext::after {
+  content: " ";
+  position: absolute;
+  top: 50%;
+  left: 100%; /* To the right of the tooltip */
+  margin-top: -10px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent transparent transparent black;
+}
+
+/*-----TOP-------- */
+.tooltip.top .tooltiptext {
+  width: 120px;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  /* Position the tooltip */
+  bottom: 115%;
   left: 50%;
   margin-left: -60px;
 }
-
-.tooltip .tooltiptext.bottom::after {
-  content: "";
+.tooltip.top .tooltiptext::after {
+  content: " ";
   position: absolute;
-  top: 100%;
+  top: 100%; /* At the bottom of the tooltip */
   left: 50%;
-  margin-left: -5px;
-  border-width: 5px;
+  margin-left: -10px;
+  border-width: 10px;
   border-style: solid;
   border-color: black transparent transparent transparent;
+}
+/*-----BOTTOM------ */
+.tooltip.bottom .tooltiptext {
+  width: 120px;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  /* Position the tooltip */
+  top: 115%;
+  left: 50%;
+  margin-left: -60px;
+}
+.tooltip.bottom .tooltiptext::after {
+  content: " ";
+  position: absolute;
+  bottom: 100%;  /* At the top of the tooltip */
+  left: 50%;
+  margin-left: -10px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent transparent black transparent;
 }
 
 .tooltip:hover .tooltiptext {

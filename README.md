@@ -11,13 +11,12 @@ Note: this is not suitable for produciton.
 npm install --save cbs-react-components
 or
 yarn add cbs-react-components
-``````
+```
 
 ## Youtube Player
 
 ```jsx
 import React, { Component } from 'react'
-
 import YoutubePlayer from 'cbs-react-components'
 
 class Example extends Component {
@@ -92,7 +91,6 @@ class Example extends React.Component {
 ### Navbar
 A Simple Responsive Navbar.
 ```jsx
-import React from 'react'
 import { NavBar, NavLink } from 'cbs-react-components'
 
 
@@ -128,9 +126,8 @@ const MyNav = (props) => {
 ```
 ### Progress Bar
 
-###### ProgressBar
+##### ProgressBar
 ```jsx
-import React from "react";
 import { ProgressBar } from 'cbs-react-components'
 
 
@@ -166,9 +163,8 @@ const Example = (props) =>{
 }
 
 ```
-###### CircleProgress
+##### CircleProgress
 ```jsx
-import React from "react";
 import { CircularProgress } from 'cbs-react-components'
 
 
@@ -217,6 +213,91 @@ const Example = (props) =>{
             default transparency value is 1.
 */
 ```
+### Collapsible Text Container
+
+```jsx
+import { TextCollapse } from 'cbs-react-components'
+
+const TextContainer = () =>{
+  return(
+    <TextCollapse 
+        size={300}                //default 400
+        className="my-classname"  //className for text element p
+        toggleOpenLabel={"MORE"}  //default "MORE"
+        toggleCloseLabel={"LESS"} //default "LESS"
+        >
+        The Matrix is a 1999 science fiction action film written and directed by the Wachowskis that 
+        stars Keanu Reeves, Laurence Fishburne, Carrie-Anne Moss, Hugo Weaving, and Joe Pantoliano.
+        It depicts a dystopian future in which humanity is unknowingly trapped inside a simulated reality, 
+        the Matrix, created by thought-capable machines (artificial beings) to distract humans while 
+        using their bodies as an energy source.When computer programmer Thomas Anderson, under the hacker alias
+        "Neo", uncovers this truth, he "is drawn into a rebellion against the machines"
+        along with other people who have been freed from the Matrix.
+        The Matrix is an example of the cyberpunk subgenre of science fiction.
+        The Wachowskis' approach to action scenes was influenced by Japanese animation and martial arts films,
+        and the film's use of fight choreographers and wire fu techniques from Hong Kong action cinema influenced 
+        subsequent Hollywood action film productions.The film is known for popularizing a visual effect known as 
+        "bullet time", where the heightened perception of certain characters is represented by allowing the action
+        within a shot to progress in slow-motion while the camera appears to move through the scene at normal speed,
+        allowing the sped-up movements of certain characters to be perceived normally. 
+        While some critics have praised the film for its handling of difficult subjects,
+        others have said the deeper themes are largely overshadowed by its action scenes.
+        The Matrix was first released in the United States on March 31, 1999,
+        and grossed over $460 million worldwide.
+    </TextCollapse>
+}
+
+/*
+for css customization corresponding className's:
+    - wrapper container: collapsible-box
+    - text element:      collapsible-text
+    - toggle element:    collapsible-toggle
+        -toggle element when the text in short/cropped form: collapsible-toggle.close
+        -toggle element when the all text is showed: collapsible-toggle.open
+*/
+```
+
+### Tooltip
+Simple Tooltip example.
+```jsx
+
+import { Tooltip } from 'cbs-react-components'
+
+const Tip = (props) =>{
+    return(
+        <Tooltip
+            text={"This will be displayed on hover" }
+            side={"bottom"} // options: top, left, bottom, right
+            backgroundColor={"black"}
+            color={"white"}
+            fontSize={16}
+        >
+  )
+}
+```
+### Transparent Text
+Transparent Text Example
+```jsx
+
+import { TransparentText } from 'cbs-react-components'
+
+const Banner = (props) =>{
+    return(
+        <TransparentText
+            text={"CBS"}
+            height={200}
+            foregroundColor={"white"}
+            backgroundColor={"linear-gradient(90deg, #440154, #482475, #414487, #355f8d," + 
+                " #2a788e, #21908d, #22a884, #42be71, #7ad151, #bddf26, #bddf26)"
+            }
+        />
+  )
+}
+```
+
+
+
+
 
 ### Hoverable Sidebar Buttons
 This is an enhanced example of [w3schools](https://www.w3schools.com/default.asp) [Hoverable Sidenav Buttons](https://www.w3schools.com/howto/howto_css_sidenav_buttons.asp) example.
@@ -263,10 +344,6 @@ const MySearchBox1 = (props) =>{
     )
 }
 /*
-
-*/
-
-/*
 ----  EXAMPLE 2 (local data)--------
 */
 const MySearchBox2 = (props) =>{
@@ -279,7 +356,6 @@ const MySearchBox2 = (props) =>{
       />
     )
 }
-
 /*
 - item prop: if your query result is an array of objects, tell which properties will show in image source      and text. Given example; In autocomplete list item look image source in poster property of movie result,
   and text in name propert of movie result.
