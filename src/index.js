@@ -8,5 +8,6 @@ export { CircularProgress } from "./components/progressbar/circular-progressbar"
 export { Tooltip } from "./components/tooltip/tooltip"
 export { TransparentText } from "./components/transparent-text/transparent-text"
 export { TextCollapse } from "./components/collapsible-text/collapsible-text"
+export { Dropdown } from "./components/dropdown/dropdown"
 
 //export * as Icon  from "./icons/index.js";
