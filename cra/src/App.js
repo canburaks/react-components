@@ -4,7 +4,9 @@ import React from "react";
 //import { YoutubePlayer, SideNavButtons, SideButton, SearchBox } from 'cbs-react-components'
 //import { NavBar, NavLink } from 'cbs-react-components'
 //import { ProgressBar, CircularProgress } from 'cbs-react-components'
-//import { Tooltip } from 'cbs-react-components'
+import { Tooltip } from 'cbs-react-components'
+import { TransparentText } from 'cbs-react-components'
+import { TextCollapse } from 'cbs-react-components'
 
 //import { IconImdb } from 'cbs-react-components/dist/icon'
 //import { videos } from "./dev-resources/videos";
@@ -15,19 +17,43 @@ const App = (props) => {
 	}
 
 	return (
-		<div style={{ minHeight: "200vh", display: "block", backgroundColor: "grey", padding: "10vw" }}>
-
+		<div style={{ minHeight: "200vh", display: "block",color:"white", backgroundColor: "rgba(31, 31, 31, 0.95)", padding: "10vw" }}>
+			<TextCollapse 
+				size={400}
+				className="my-classname"
+				toggleOpenLabel={"MORE"}
+				toggleCloseLabel={"LESS"}
+				>
+					The Matrix is a 1999 science fiction action film[3][4] written and directed by the Wachowskis[a] that 
+					stars Keanu Reeves, Laurence Fishburne, Carrie-Anne Moss, Hugo Weaving, and Joe Pantoliano.
+					It depicts a dystopian future in which humanity is unknowingly trapped inside a simulated reality, 
+					the Matrix, created by thought-capable machines (artificial beings)[b] to distract humans while 
+					using their bodies as an energy source.When computer programmer Thomas Anderson, under the hacker alias "Neo",
+					uncovers this truth, he "is drawn into a rebellion against the machines"
+					along with other people who have been freed from the Matrix.
+					The Matrix is an example of the cyberpunk subgenre of science fiction.
+					The Wachowskis' approach to action scenes was influenced by Japanese animation and martial arts films,
+					and the film's use of fight choreographers and wire fu techniques from Hong Kong action cinema influenced 
+					subsequent Hollywood action film productions.The film is known for popularizing a visual effect known as 
+					"bullet time", where the heightened perception of certain characters is represented by allowing the action
+					within a shot to progress in slow-motion while the camera appears to move through the scene at normal speed,
+					allowing the sped-up movements of certain characters to be perceived normally. While some critics have praised
+					the film for its handling of difficult subjects, others have said the deeper themes are largely overshadowed
+					by its action scenes. The Matrix was first released in the United States on March 31, 1999,
+					and grossed over $460 million worldwide. It was well-received by many critics
+					and won four Academy Awards, as well as other accolades, including BAFTA Awards and
+					Saturn Awards. The Matrix was praised for its innovative visual effects, cinematography and entertainment value.
+					The film has since appeared in lists of the greatest science fiction films, and was added to the National 
+					Film Registry for preservation in 2012. The success of the film led to the release of two feature film sequels in 2003,
+					The Matrix Reloaded and The Matrix Revolutions, which were also written and directed by the Wachowskis.
+					The Matrix franchise was further expanded, with the Wachowskis being heavily involved, through the production of
+					comic books, video games and animated short films. The Matrix franchise has even inspired books and theories on some
+					of the religious and philosophical ideas alluded to in the movies.
+			</TextCollapse>
 		</div>
 	)
 }
-/*
-	NOTES: 
-	- Choose only one of percent, onlyvalue or nolabel
-	- Spectrum is hsla color values: given range of hue values stroke color will fall between the range.
-		E.g; spectrum={{start:0, stop:180, transparency=0.8}} and value={40} max={80} 
-		will take ((40/80)*(180-0))=90 hue value and color will be hsla(90, 100%, 50%, 1).
-		default transparency value is 1.
-*/
+
 export default App
 
 
@@ -52,6 +78,26 @@ var movies = [
 var countries = ["Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Anguilla", "Antigua & Barbuda", "Argentina", "Armenia", "Aruba", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bermuda", "Bhutan", "Bolivia", "Bosnia & Herzegovina", "Botswana", "Brazil", "British Virgin Islands", "Brunei", "Bulgaria", "Burkina Faso", "Burundi", "Cambodia"];
 
 /*
+-----Tooltip--------------------
+<Tooltip
+	text={"tooltiiiipp" }
+	side={"bottom"}
+	backgroundColor={"black"}
+	color={"white"}
+	fontSize={16}
+>
+-----------------------------------
+
+-----TransparentText--------------
+<TransparentText
+	text={"CBS"}
+	height={200}
+	foregroundColor={"white"}
+	backgroundColor={"linear-gradient(90deg, #440154, #482475, #414487, #355f8d, #2a788e, #21908d, #22a884, #42be71, #7ad151, #bddf26, #bddf26)"}
+/>
+-----------------------------------
+
+
 ------ProgressBar--------
 <CircularProgress
 	value={65} 							//required
