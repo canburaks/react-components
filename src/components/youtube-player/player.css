@@ -24,9 +24,8 @@
     }
 
 svg{
-    border-radius:50%;
     box-shadow:0 0 2px 1px var(--bg-color-3);
-    padding:5px;
+    
     cursor: pointer;
 }
 svg.feather-moon:hover{
@@ -34,7 +33,7 @@ svg.feather-moon:hover{
     box-shadow:0 0 2px 2px hsla(231, 68%, 48%, 1);
     border-radius:50%;
     box-shadow:0 0 2px 1px var(--bg-color-3);
-    padding:5px;
+    
     cursor: pointer;
 }
 svg.feather-sun:hover{
@@ -42,7 +41,7 @@ svg.feather-sun:hover{
     box-shadow:0 0 2px 2px hsla(231, 68%, 48%, 1);
     border-radius:50%;
     box-shadow:0 0 2px 1px var(--bg-color-3);
-    padding:5px;
+    
     cursor: pointer;
 }
 #video-player-box{
