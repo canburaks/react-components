@@ -248,7 +248,7 @@ const TextContainer = () =>{
 }
 
 /*
-for css customization corresponding className's:
+for css customization corresponding classNames:
     - wrapper container: collapsible-box
     - text element:      collapsible-text
     - toggle element:    collapsible-toggle
