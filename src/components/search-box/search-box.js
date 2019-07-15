@@ -171,7 +171,7 @@ export const SearchBox = (props) => {
     }
     return(
         <div className={props.className ? `autocomplete ${props.className}` : "autocomplete"}>
-            <input
+            <input autocomplete="new-password"
                 id="searchbox-input" type="text" className={inputClassName} value={input}
                 name="myCountry" placeholder={props.placeholder ? props.placeholder : ""}
                 onChange={e => inputHandler(e)}

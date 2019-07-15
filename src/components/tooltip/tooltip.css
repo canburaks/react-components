@@ -10,7 +10,7 @@
   text-align: center;  
   /* Position the tooltip */
   position: absolute;
-  z-index: 5;
+  z-index: 3000;
 
 }
 
