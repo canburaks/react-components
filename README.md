@@ -34,9 +34,6 @@ const videos = [
         "summary": null,
         "link": "https://www.youtube.com/watch?v=25sV5zhdn1A",
         "youtubeId": "25sV5zhdn1A",
-        "tags": [
-            "featurette"
-        ],
         "duration": null,
     },
     {
@@ -45,9 +42,6 @@ const videos = [
         "summary": null,
         "link": "https://www.youtube.com/watch?v=i_vrlpWB4Vo",
         "youtubeId": "i_vrlpWB4Vo",
-        "tags": [
-            "trailer"
-        ],
         "duration": null,
     }]
 
