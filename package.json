@@ -58,7 +58,5 @@
   "files": [
     "dist"
   ],
-  "dependencies": {
-    "awesomplete": "^1.1.4"
-  }
+  "dependencies": {}
 }
