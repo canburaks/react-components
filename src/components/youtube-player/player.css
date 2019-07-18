@@ -90,11 +90,11 @@ svg.feather-sun:hover{
     box-sizing:border-box;
     overflow-y: scroll;
     margin-left:2px;
-    padding:0 4px 0 4px;
+    padding:4px 4px 0 4px;
 }
 .list-item{
     width:95%;
-    height:100px;
+    height:80px;
     position:relative;
     display:flex;
     flex-direction:column;
@@ -135,15 +135,24 @@ svg.feather-sun:hover{
     box-sizing:border-box;
     cursor:pointer;
 }
+.active-list-item:hover{
+    /*
+    background-color: var(--bg-color-3);
+    */
+    border-radius:8px;
+
+    border:1px solid hsla(231, 55%, 52%, 0.8);
+}
 .list-item-thumb{
-    height:50px;
-    width:120px;
-    padding:4px 4px 0 4px;
+    height:40px;
+    width:140px;
+    padding:0 4px 0 4px;
 
 }
-.list-item-text{
+p.list-item-text{
     width:100%;
-    font-size:80%;
+    padding: 0 !important;
+    font-size:12px;
     white-space: nowrap; 
     overflow: hidden;
     text-align:center;
