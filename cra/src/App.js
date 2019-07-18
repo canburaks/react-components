@@ -3,7 +3,7 @@ import React from "react";
 
 import { YoutubePlayer, SideNavButtons, SideButton, SearchBox } from 'cbs-react-components'
 //import { NavBar, NavLink } from 'cbs-react-components'
-//import { ProgressBar, CircularProgress } from 'cbs-react-components'
+import { ProgressBar, CircularProgress } from 'cbs-react-components'
 //import { Tooltip } from 'cbs-react-components'
 //import { TransparentText } from 'cbs-react-components'
 //import { TextCollapse } from 'cbs-react-components'
@@ -11,7 +11,7 @@ import { YoutubePlayer, SideNavButtons, SideButton, SearchBox } from 'cbs-react-
 //import { Popup } from 'cbs-react-components'
 
 //import { IconHome } from 'cbs-react-components/dist/icon'
-//import { videos } from "./dev-resources/videos";
+import { videos } from "./dev-resources/videos";
 
 const App = (props) => {
 	function inputHandler(input) {
@@ -22,13 +22,21 @@ const App = (props) => {
 		<div style={{ minHeight: "200vh", display: "block",color:"white", 
 			backgroundColor: "rgba(31, 31, 31, 0.95)",
 			padding: "5vw" }}>
-			<Popup side={"top"} text={"tooltip"} className="my-classname" title="click" id="my-id">top</Popup>
-			<br/>
-			<Popup side={"left"} text={"tooltip"}>left</Popup>
-			<br/>
-			<Popup side={"right"} text={"tooltip"}>right</Popup>
-			<br/>
-			<Popup side={"bottom"} text={"tooltip"}>bottom</Popup>
+			<CircularProgress
+				value={65} 							//required
+				max={100} 							//default 100
+				size={80}							//default 80
+				strokeWidth={10}					//default 6
+				stroke={"rgb(142, 241, 125)"} 		//defaul rgb(69, 72, 233)
+				baseStroke={"rgb(40, 40, 40)"}	    //default none
+				fill={"rgb(40, 40, 40)"} 			//default rgb(42, 40, 40);
+
+				textColor={"rgb(211, 204, 227)"}		        //default rgb(20,20,20)
+				fontSize={18} 						//default size/5 (if fontSize > size/4 than fontSize=size/5)
+				fontWeight={600}					//default 600
+				percent								//options-> percent,onlyvalue nolabel
+				full
+			/>
 			<YoutubePlayer videos={videos} />
 		</div>
 	)
@@ -69,6 +77,14 @@ var countries = ["Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Angu
 	top
 </Popup>
 
+
+<Popup side={"top"} text={"tooltip"} className="my-classname" title="click" id="my-id">top</Popup>
+<br/>
+<Popup side={"left"} text={"tooltip"}>left</Popup>
+<br/>
+<Popup side={"right"} text={"tooltip"}>right</Popup>
+<br/>
+<Popup side={"bottom"} text={"tooltip"}>bottom</Popup>
 
 
 -----DropDown----------------

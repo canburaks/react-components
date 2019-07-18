@@ -9,6 +9,7 @@ export const CircularProgress = (props) => {
         nolabel, onlyvalue, spectrum,
         strokeWidth=6,
         percent, 
+        full,
         max = 100, size = 80,
         textColor ="#232526",
         stroke = "rgb(69, 72, 233)",
@@ -28,7 +29,7 @@ export const CircularProgress = (props) => {
     const radius = (size / 2);
     const normalizedRadius = radius - swidth * 2;
     const circumference = normalizedRadius * 2 * Math.PI;
-    const strokeDashoffset = circumference - percentValue / 100 * circumference; //nonvisible areas of circle
+    const strokeDashoffset = full ? 0 : (circumference - percentValue / 100 * circumference); //nonvisible areas of circle
 
     function chooseLabel(){
         return percent
