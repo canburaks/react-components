@@ -51,7 +51,7 @@
 /* Change color of dropdown links on hover */
 .dropdown-content div:hover,
 .dropdown-content a:hover{
-    opacity:0.8
+    opacity:1;
 }
 
 /* Show the dropdown menu on hover */
