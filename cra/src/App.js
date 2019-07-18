@@ -1,14 +1,14 @@
 import React from "react";
 //import { useState } from "react";
 
-//import { YoutubePlayer, SideNavButtons, SideButton, SearchBox } from 'cbs-react-components'
+import { YoutubePlayer, SideNavButtons, SideButton, SearchBox } from 'cbs-react-components'
 //import { NavBar, NavLink } from 'cbs-react-components'
 //import { ProgressBar, CircularProgress } from 'cbs-react-components'
 //import { Tooltip } from 'cbs-react-components'
 //import { TransparentText } from 'cbs-react-components'
 //import { TextCollapse } from 'cbs-react-components'
 //import { Dropdown } from 'cbs-react-components'
-import { Popup } from 'cbs-react-components'
+//import { Popup } from 'cbs-react-components'
 
 //import { IconHome } from 'cbs-react-components/dist/icon'
 //import { videos } from "./dev-resources/videos";
@@ -21,7 +21,7 @@ const App = (props) => {
 	return (
 		<div style={{ minHeight: "200vh", display: "block",color:"white", 
 			backgroundColor: "rgba(31, 31, 31, 0.95)",
-			padding: "20vw" }}>
+			padding: "5vw" }}>
 			<Popup side={"top"} text={"tooltip"} className="my-classname" title="click" id="my-id">top</Popup>
 			<br/>
 			<Popup side={"left"} text={"tooltip"}>left</Popup>
@@ -29,7 +29,7 @@ const App = (props) => {
 			<Popup side={"right"} text={"tooltip"}>right</Popup>
 			<br/>
 			<Popup side={"bottom"} text={"tooltip"}>bottom</Popup>
-
+			<YoutubePlayer videos={videos} />
 		</div>
 	)
 }

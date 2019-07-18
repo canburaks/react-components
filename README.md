@@ -47,40 +47,6 @@ const videos = [
 
 ```
 
-### Icon
-Icons are mostly adapted  from [feather-icons](https://github.com/feathericons/feather).
-Also there are some other icons.
-
-
-
-```jsx
-import React from 'react'
-import {IconTwitter} from 'cbs-react-components/dist/icon'
-
-class Example extends React.Component {
-  render () {
-    return (
-        <IconTwitter 
-            size="28" 
-            fill="black" 
-            stroke="blue" 
-            strokeWidth="1" 
-            className="tw-share" 
-            onClick={() => alert("clicked")}
-        />
-    )
-  }
-}
-
-/*Other Icons
-[ "IconArrowLeft", "IconArrowRight", "IconBookmark", "IconCheck", "IconCircle", 
-  "IconFacebook", "IconFilm", "IconGithub", "IconGlobe", "IconHeart", "IconHome","IconImdb","IconInstagram",
-  "IconLock", "IconLogin", "IconLogout", "IconMenu", "IconMessageSquare", "IconMoreHorizontal",
-  "IconMoreVertical", "IconPlus", "IconSearch", "IconSettings", "IconSlash", "IconSliders", 
-  "IconStar", "IconTag", "IconToggleLeft", "IconToggleRight", "IconTv", "IconTwitter", "IconType", "IconUserCheck", "IconUserMinus", "IconUserPlus", "IconUserX", "IconUser", "IconUsers",
-  "IconVideoOff", "IconVideo", "IconXCircle", "IconX", "IconYouutube"
-]
-```
 
 ### Navbar
 A Simple Responsive Navbar.
