@@ -1,8 +1,8 @@
 :root{
     --placeholder-color:rgba(255, 255, 255, 0.465);
     --placeholder-focus-color:rgb(56, 56, 56);
-    --input-min-width:120px;
-    --input-width:180px;
+    --input-min-width:100px;
+    --input-width:150px;
     --color-dark: #232526;
     --color-light: rgb(211, 204, 227);
     --color-base:#232526;
