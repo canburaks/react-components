@@ -15,7 +15,7 @@ export const TransparentText = ({
     }}
     return(
         <div  className="image-container" style={styles.back} >
-            <div  className="text" style={{ fontSize, backgroundColor:foregroundColor }}>{text}</div>
+            <div  className="transparent-text" style={{ fontSize, backgroundColor:foregroundColor }}>{text}</div>
         </div>
     )
 }
