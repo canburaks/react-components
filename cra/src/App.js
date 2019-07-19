@@ -1,7 +1,7 @@
 import React from "react";
-//import { useState } from "react";
+import { useState } from "react";
 
-import { YoutubePlayer, SideNavButtons, SideButton, SearchBox } from 'cbs-react-components'
+import { YoutubePlayer, SideNavButtons, SideButton, SearchBox, Modal, useModal } from 'cbs-react-components'
 //import { NavBar, NavLink } from 'cbs-react-components'
 import { ProgressBar, CircularProgress } from 'cbs-react-components'
 //import { Tooltip } from 'cbs-react-components'
@@ -14,30 +14,28 @@ import { ProgressBar, CircularProgress } from 'cbs-react-components'
 import { videos } from "./dev-resources/videos";
 
 const App = (props) => {
+	const { isOpen, toggle } = useModal();
+
 	function inputHandler(input) {
 		console.log("parent input handler: ", input)
 	}
 
-	return (
-		<div style={{ minHeight: "200vh", display: "block",color:"white", 
+		return (
+		<div style={{ minHeight: "100vh", display: "block",color:"white", 
 			backgroundColor: "rgba(31, 31, 31, 0.95)",
 			padding: "5vw" }}>
-			<CircularProgress
-				value={65} 							//required
-				max={100} 							//default 100
-				size={80}							//default 80
-				strokeWidth={10}					//default 6
-				stroke={"rgb(142, 241, 125)"} 		//defaul rgb(69, 72, 233)
-				baseStroke={"rgb(40, 40, 40)"}	    //default none
-				fill={"rgb(40, 40, 40)"} 			//default rgb(42, 40, 40);
 
-				textColor={"rgb(211, 204, 227)"}		        //default rgb(20,20,20)
-				fontSize={18} 						//default size/5 (if fontSize > size/4 than fontSize=size/5)
-				fontWeight={600}					//default 600
-				percent								//options-> percent,onlyvalue nolabel
-				full
-			/>
 			<YoutubePlayer videos={videos} />
+				<button className="button-default" onClick={toggle}>Show Modal</button>
+
+			<Modal
+				isOpen={isOpen}
+				toggle={toggle}
+				clsBox="box-classname"
+				clsContent="content-classname"
+			>
+					<div style={{width:200, height:300}}>asdasd</div>
+			</Modal>
 		</div>
 	)
 }
@@ -66,6 +64,28 @@ var movies = [
 var countries = ["Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Anguilla", "Antigua & Barbuda", "Argentina", "Armenia", "Aruba", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bermuda", "Bhutan", "Bolivia", "Bosnia & Herzegovina", "Botswana", "Brazil", "British Virgin Islands", "Brunei", "Bulgaria", "Burkina Faso", "Burundi", "Cambodia"];
 
 /*
+-----Modal----------------
+import { Modal, useModal } from 'cbs-react-components'
+
+const App = (props) => {
+	const { isOpen, toggle } = useModal();
+		return (
+		<div style={{ minHeight: "100vh", display: "block",color:"white",
+			backgroundColor: "rgba(31, 31, 31, 0.95)",
+			padding: "5vw" }}>
+
+			<YoutubePlayer videos={videos} />
+				<button className="button-default" onClick={toggle}>Show Modal</button>
+
+			<Modal
+				isOpen={isOpen}
+				toggle={toggle}
+				>
+					<div style={{width:200, height:300}}>asdasd</div>
+			</Modal>
+		</div>
+	)
+}
 -----Popup---------------
 <Popup 
 	side={"top"} 
