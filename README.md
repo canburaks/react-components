@@ -47,6 +47,27 @@ const videos = [
 
 ```
 
+### Modal
+A Simple Modal.
+```jsx
+import { Modal, useModal } from 'cbs-react-components'
+
+const App = () => {
+	const { isOpen, toggle } = useModal();
+		return (
+		<div>
+			<Modal
+				isOpen={isOpen}
+				toggle={toggle}
+				clsBox="box-classname"
+				clsContent="content-classname"
+				>
+					<div style={{width:200, height:300}}>modal content</div>
+			</Modal>
+		</div>
+	)
+}
+```
 
 ### Navbar
 A Simple Responsive Navbar.

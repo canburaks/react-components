@@ -10,5 +10,5 @@ export { TransparentText } from "./components/transparent-text/transparent-text"
 export { TextCollapse } from "./components/collapsible-text/collapsible-text"
 export { Dropdown } from "./components/dropdown/dropdown"
 export { Popup } from "./components/popup/popup"
+export { Modal, useModal } from "./components/modal/modal"
 
-//export * as Icon  from "./icons/index.js";
