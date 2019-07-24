@@ -4,11 +4,11 @@ import { useState } from "react";
 import { YoutubePlayer, SideNavButtons, SideButton, SearchBox, Modal, useModal } from 'cbs-react-components'
 //import { NavBar, NavLink } from 'cbs-react-components'
 import { ProgressBar, CircularProgress } from 'cbs-react-components'
-//import { Tooltip } from 'cbs-react-components'
+import { Tooltip } from 'cbs-react-components'
 //import { TransparentText } from 'cbs-react-components'
 //import { TextCollapse } from 'cbs-react-components'
 //import { Dropdown } from 'cbs-react-components'
-//import { Popup } from 'cbs-react-components'
+import { Popup } from 'cbs-react-components'
 
 //import { IconHome } from 'cbs-react-components/dist/icon'
 import { videos } from "./dev-resources/videos";
@@ -25,17 +25,13 @@ const App = (props) => {
 			backgroundColor: "rgba(31, 31, 31, 0.95)",
 			padding: "5vw" }}>
 
-			<YoutubePlayer videos={videos} />
-				<button className="button-default" onClick={toggle}>Show Modal</button>
-
-			<Modal
-				isOpen={isOpen}
-				toggle={toggle}
-				clsBox="box-classname"
-				clsContent="content-classname"
-			>
-					<div style={{width:200, height:300}}>asdasd</div>
-			</Modal>
+				<Tooltip
+					text={"tooltiiiipp"}
+					side={"bottom"}
+					backgroundColor={"pink"}
+					color={"white"}
+					fontSize={16}
+				>asdasdasdas/</Tooltip>
 		</div>
 	)
 }
