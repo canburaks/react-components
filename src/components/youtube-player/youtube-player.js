@@ -7,6 +7,7 @@ export  class YoutubePlayer extends React.Component{
         super(props);
         this.sort = this.props.sort ? this.props.sort : "trailer"
         this.debug = this.props.debug ? this.props.debug : false;
+        this.initialOpen = this.props.listbox
         //console.log("asd",props)
         let processedVideos = this.processVideos(this.sortByTag(this.props.videos, this.sort));
         //console.log("process", processedVideos)
@@ -17,9 +18,10 @@ export  class YoutubePlayer extends React.Component{
             activeVideo: processedVideos[0],
             src: processedVideos[0] ? processedVideos[0].thumb : null,
             theme:props.theme ? props.theme : "dark",
-            listbox:true
+            listbox:this.initialOpen
          };
-         this.trace("state", this.state)
+        this.trace("state", this.state)
+
     }
     loadVideos(){
         if (this.props.videos.length>0){
@@ -74,13 +76,14 @@ export  class YoutubePlayer extends React.Component{
 }
     resize(){
         //console.log("resizing..")
-
         var playerBox = document.getElementById("active-video-box");
         var listBox = document.getElementById("list-box");
         if (playerBox && playerBox.clientWidth) {
             var playerBoxHeight = `${playerBox.clientWidth * 0.61 + 60}px`
             playerBox.style.height = playerBoxHeight
-            listBox.style.height = playerBoxHeight
+            if(this.state && this.state.listbox){
+                listBox.style.height = playerBoxHeight
+            }
         }
     }
     componentDidMount(){
@@ -92,14 +95,15 @@ export  class YoutubePlayer extends React.Component{
     }
     
 render(){
-
     if(this.state.videos.length < 1 ){
         return(<div></div>)
     }
-    this.trace("render ", this.state )
+    //this.trace("render ", this.state )
     const { activeVideo, videos, theme, listbox } = this.state;
+    const listboxClassname = this.state.listbox ? "open" : "close"
+    const appClassname = theme + " " + listboxClassname
     return(
-        <div theme={theme} id="video-player-box" className={theme}>
+        <div theme={theme} id="video-player-box" className={appClassname}>
             <div id="active-video-box" >
                 <iframe id="player"
                     src={activeVideo.src}
@@ -160,20 +164,20 @@ render(){
                             </svg>
                     }
             </div>
-        </div>
-
-        <div id="list-box" className={listbox ? "open" : "close"}>
-        {videos.map((v, i)=>(
-            <div title={v.title}
-                className={v === activeVideo ?"active-list-item" : "list-item"}
-                onClick={() => this.setState({activeVideo:v})}
-                key={v.id + i}
-                >
-                <img  alt={v.title} title={v.title} src={v.thumb}  className="list-item-thumb" />
-                <p className="list-item-text">{v.title}</p>
             </div>
-        ))}
-        </div>
+
+            {listbox && <div id="list-box" className={listboxClassname}>
+            {videos.map((v, i)=>(
+                <div title={v.title}
+                    className={v === activeVideo ?"active-list-item" : "list-item"}
+                    onClick={() => this.setState({activeVideo:v})}
+                    key={v.id + i}
+                    >
+                    <img  alt={v.title} title={v.title} src={v.thumb}  className="list-item-thumb" />
+                    <p className="list-item-text">{v.title}</p>
+                </div>
+            ))}
+            </div>}
     </div>
 
     )
