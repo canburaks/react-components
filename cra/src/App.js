@@ -21,18 +21,16 @@ const App = (props) => {
 	}
 
 		return (
-		<div style={{ minHeight: "100vh", display: "block",color:"white", 
-			backgroundColor: "rgba(31, 31, 31, 0.95)",
-			padding: "5vw" }}>
+			<div style={{
+				minHeight: "100vh", display: "block", color: "black",
+				backgroundColor: "rgba(240, 240, 240, 0.95)",
+				padding: "5vw"
+			}}>
 
-				<Tooltip
-					text={"tooltiiiipp"}
-					side={"bottom"}
-					backgroundColor={"pink"}
-					color={"white"}
-					fontSize={16}
-				>asdasdasdas/</Tooltip>
-		</div>
+				<YoutubePlayer videos={videos} />
+				<button className="button-default" onClick={toggle}>Show Modal</button>
+
+			</div>
 	)
 }
 
