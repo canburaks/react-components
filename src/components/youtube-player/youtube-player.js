@@ -16,7 +16,8 @@ export  class YoutubePlayer extends React.Component{
             videos: processedVideos,
             activeVideo: processedVideos[0],
             src: processedVideos[0] ? processedVideos[0].thumb : null,
-            theme:props.theme ? props.theme : "dark"
+            theme:props.theme ? props.theme : "dark",
+            listbox:true
          };
          this.trace("state", this.state)
     }
@@ -96,9 +97,9 @@ render(){
         return(<div></div>)
     }
     this.trace("render ", this.state )
-    const { activeVideo, videos, theme } = this.state;
+    const { activeVideo, videos, theme, listbox } = this.state;
     return(
-        <div theme={theme} id="video-player-box" >
+        <div theme={theme} id="video-player-box" className={theme}>
             <div id="active-video-box" >
                 <iframe id="player"
                     src={activeVideo.src}
@@ -141,12 +142,29 @@ render(){
 
 
                     <p  id="video-title">{activeVideo.title}</p>
+                    {listbox 
+                        ?   <svg aria-hidden="true" focusable="false" onClick={() => this.setState({listbox:false})}
+                                data-prefix="fas"
+                                data-icon="angle-double-up"
+                                className="f-icon toggle-list-box svg-inline--fa fa-angle-double-up fa-w-10" role="img"
+                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"
+                            >
+                                <path fill="currentColor" d="M177 255.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 351.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 425.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1zm-34-192L7 199.7c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l96.4-96.4 96.4 96.4c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9l-136-136c-9.2-9.4-24.4-9.4-33.8 0z"></path>
+                            </svg>
+                        :   <svg aria-hidden="true" focusable="false" onClick={() => this.setState({listbox:true})}
+                                data-prefix="fas" data-icon="angle-double-down"
+                                className="f-icon toggle-list-box svg-inline--fa fa-angle-double-down fa-w-10"
+                                role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"
+                            >
+                                <path fill="currentColor" d="M143 256.3L7 120.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0L313 86.3c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.4 9.5-24.6 9.5-34 .1zm34 192l136-136c9.4-9.4 9.4-24.6 0-33.9l-22.6-22.6c-9.4-9.4-24.6-9.4-33.9 0L160 352.1l-96.4-96.4c-9.4-9.4-24.6-9.4-33.9 0L7 278.3c-9.4 9.4-9.4 24.6 0 33.9l136 136c9.4 9.5 24.6 9.5 34 .1z"></path>
+                            </svg>
+                    }
             </div>
         </div>
 
-        <div id="list-box" >
+        <div id="list-box" className={listbox ? "open" : "close"}>
         {videos.map((v, i)=>(
-            <div 
+            <div title={v.title}
                 className={v === activeVideo ?"active-list-item" : "list-item"}
                 onClick={() => this.setState({activeVideo:v})}
                 key={v.id + i}
