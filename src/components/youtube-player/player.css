@@ -68,6 +68,7 @@ svg.f-icon.toggle-list-box:hover{
     flex-wrap:wrap;
     height:auto;
     background-color: var(--bg-color-2);
+    flex-direction: column;
     justify-content:flex-start;
     align-items:stretch;
     box-shadow: 8px 30px 29px -8px rgba(0, 0, 0, 0.57) ;
@@ -254,26 +255,6 @@ p.list-item-text{
 }
 
 @media all and (min-width: 736px) { 
-
-}
-@media all and (min-width: 1280px) { 
-    .open #active-video-box{
-        width:75%;
-        
-        border-bottom-left-radius:8px;
-        border-top-left-radius:8px;
-    }
-    .open #list-box{
-        width:calc(25% - 3px);
-        border-top-right-radius:8px;
-        border-bottom-right-radius:8px;
-    }
-    .close #active-video-box{
-        width: 100%;
-    }
-    .close #list-box{
-        width: 0px;
-    }
 
 }
 
