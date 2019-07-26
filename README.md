@@ -22,7 +22,9 @@ import YoutubePlayer from 'cbs-react-components'
 class Example extends Component {
   render () {
     return (
-      <YoutubePlayer  videos={videos}/>
+      <YoutubePlayer  videos={videos} 
+        listbox={false} //default listbox toggle
+        />
     )
   }
 }
