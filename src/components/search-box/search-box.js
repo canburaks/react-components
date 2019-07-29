@@ -36,6 +36,12 @@ export const SearchBox = (props) => {
             setOpen(false)
         }
         setInput(e.target.value)
+
+        //Export input to parent
+        if(props.export){
+            props.export(e.target.value)
+        }
+
         //if data is local and supplied
         if (props.data) {
             const result = props.data.filter(d => resultValidation(d).includes((e.target.value).toLowerCase()))
@@ -109,7 +115,7 @@ export const SearchBox = (props) => {
     function submitHandler(e) {
         //console.log(this.state)
         e.preventDefault();
-        props.onSubmit(values);
+        props.onSubmit(input,values);
         setOpen(false)
     }
 
@@ -182,7 +188,6 @@ export const SearchBox = (props) => {
             {open && 
             <div className="autocomplete-items" >
                 {values.map((v,i )=> {
-                    console.log(i)
                     if (i === activeItem) return createListItem(v, true)
                     else return createListItem(v, false)
                     })}
