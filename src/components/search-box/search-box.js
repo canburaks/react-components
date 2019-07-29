@@ -115,7 +115,8 @@ export const SearchBox = (props) => {
     function submitHandler(e) {
         //console.log(this.state)
         e.preventDefault();
-        props.onSubmit(input,values);
+        const submitData = {input, values}
+        props.onSubmit(submitData);
         setOpen(false)
     }
 
@@ -132,13 +133,13 @@ export const SearchBox = (props) => {
         }
     }
 
-    function createListItem(value, active=false) {
+    function createListItem(value, active=false, index) {
         const isString = typeof value === "string";
 
         if (isString) return (
             <div
                 className={active===true ? "ac-list-item active" : "ac-list-item"}
-                onClick={(e) => clickHandler(e, value)}
+                onClick={(e) => clickHandler(e, value)} key={index}
             >
                 <p className="ac-item-text">{value}</p>
             </div>
@@ -151,7 +152,7 @@ export const SearchBox = (props) => {
         }
         return (
             <div className={active===true ? "ac-list-item active" : "ac-list-item"}
-                onClick={(e) => clickHandler(e, value)}
+                onClick={(e) => clickHandler(e, value)} key={index}
             >
                 {imageSrc && <img src={imageSrc} className="ac-item-img" />}
                 {text && <p className="ac-item-text">{text}</p>}
@@ -188,8 +189,8 @@ export const SearchBox = (props) => {
             {open && 
             <div className="autocomplete-items" >
                 {values.map((v,i )=> {
-                    if (i === activeItem) return createListItem(v, true)
-                    else return createListItem(v, false)
+                    if (i === activeItem) return createListItem(v, true, i)
+                    else return createListItem(v, false, i)
                     })}
             </div>
         }
