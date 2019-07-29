@@ -79,9 +79,11 @@ export const SearchBox = (props) => {
         // User pressed the enter key, update the input and close the
         // suggestions
         if (e.keyCode === 13) {
+            const submitData = { input, values }
+
             e.preventDefault();
             if (activeItem===null){
-                props.onSubmit(values);
+                props.onSubmit(submitData);
             }
             else {
                 props.onClick(values[activeItem])
