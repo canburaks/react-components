@@ -12,7 +12,8 @@ import { Popup } from 'cbs-react-components'
 
 //import { IconHome } from 'cbs-react-components/dist/icon'
 import { videos } from "./dev-resources/videos";
-import { Input, PasswordInput, EmailInput,UsernameInput } from 'cbs-react-components'
+//import { Input, PasswordInput, EmailInput,UsernameInput } from 'cbs-react-components'
+import { Input } from 'cbs-react-components'
 
 
 const App = (props) => {
@@ -38,14 +39,15 @@ const App = (props) => {
 				isOpen={isOpen}
 				toggle={toggle}
 			>			
-				<UsernameInput getValue={setUsername}  getError={getError} />
-				<EmailInput getValue={setEmail}  getError={getError} />
-				<PasswordInput getValue={setPass}  getError={getError} />
-				<PasswordInput getValue={setPass2} 
-					label="Re-Password" 
-					validator={e => e===pass} getError={getError} 
-					validationMessage="Password doesn't match"
-					/>
+				<Input
+					label={label}
+					type="password"
+					placeholder={placeholder}
+					getValue={getValue}
+					getError={getError}
+					validation={validator ? validator : passwordValidator}
+					validationMessage={validationMessage ? validationMessage : "Password must be 8 alphanumeric-uupercase-lowercase."}
+				/>
 			</Modal>
 		</div>
 	)
@@ -75,6 +77,16 @@ var movies = [
 var countries = ["Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Anguilla", "Antigua & Barbuda", "Argentina", "Armenia", "Aruba", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bermuda", "Bhutan", "Bolivia", "Bosnia & Herzegovina", "Botswana", "Brazil", "British Virgin Islands", "Brunei", "Bulgaria", "Burkina Faso", "Burundi", "Cambodia"];
 
 /*
+<Input
+	label={label}
+	type="password"
+	placeholder={placeholder}
+	getValue={getValue}
+	getError={getError}
+	validation={validator ? validator : passwordValidator}
+	validationMessage={validationMessage ? validationMessage : "Password must be 8 alphanumeric-uupercase-lowercase."}
+/>
+
 -----FORM----------------
 <UsernameInput getValue={setUsername}  getError={getError} />
 <EmailInput getValue={setEmail}  getError={getError} />
