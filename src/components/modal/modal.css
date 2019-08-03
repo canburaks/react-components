@@ -24,8 +24,8 @@
 
 .f-icon.svg-inline--fa.fa-times-circle{
     position: absolute;
-    top:-20px;
-    right:-20px;
+    top:0px;
+    right:0px;
     font-size: 26px;
     width:28px;
     height:28px;
