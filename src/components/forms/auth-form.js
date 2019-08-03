@@ -43,7 +43,7 @@ export const Input = (props)=>{
     return (
         <div className="input-box">
             <label className="cbs-label">{label}</label>
-            <input required min={4} maxlength={20}
+            <input required min={4} maxLength={20}
 				className={inputClassname}
                 placeholder={placeholder} type={type}
 				value={inputValue}
