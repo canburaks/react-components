@@ -75,7 +75,7 @@ export const PasswordInput = ({ getValue, label="password", placeholder ="Passwo
 		validationMessage={validationMessage ? validationMessage : "Password must be 8 alphanumeric-uupercase-lowercase."}
 	/>
 )
-export const Emailnput = ({ getValue, label="email", placeholder="@" }) => (
+export const EmailInput = ({ getValue, label="email", placeholder="@" }) => (
 	<Input
 		label={label}
 		type="email"
