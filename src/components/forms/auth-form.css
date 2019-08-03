@@ -1,0 +1,73 @@
+/*SINGLE INPUT ELEMENT */
+.input-box,
+input{
+	width: 100%;
+}
+.input-box{
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	padding:4px 12px;
+	/*
+	border:1px solid black
+	*/
+}
+/*-----LABEL-----*/
+.input-box > label.cbs-label{
+	font-size:12px;
+	text-transform: capitalize;
+	color:rgb(40, 40, 40);
+	font-weight: 600;
+}
+/*-----LABEL ERROR-----*/
+.input-box > label.cbs-label-error{
+	text-transform: capitalize;
+	color:rgb(69, 69, 69);
+	font-size:12px;
+	min-height: 18px;
+	color:red;
+}
+
+.input-box > input[type=text].cbs-input,
+.input-box > input[type=password].cbs-input,
+.input-box > input[type=email].cbs-input{
+	width: 100%;
+	padding: 4px 0;
+	margin: 4px 0;
+	box-sizing: border-box;
+	border:0px solid transparent !important;
+	border-bottom: 3px solid grey !important;
+	background: transparent;
+	font-size:14px;
+	font-weight: 400;
+	color:rgb(69, 69, 69);
+	line-height:16.1px;
+  transition: border-bottom-color 0.2s;
+}
+
+/*---FOCUS----*/
+.input-box > input[type=text].cbs-input:focus,
+.input-box > input[type=password].cbs-input:focus,
+.input-box > input[type=email].cbs-input:focus{
+  	border:0px solid transparent !important;
+	border-bottom: 3px solid rgba(76, 86, 226, 1) !important;
+	outline:none;
+	caret-color:  rgba(76, 86, 226, 1) !important;
+}
+
+
+
+/* ---STATUS--- */
+/* valid*/
+.input-box > input[type=text].cbs-input.valid,
+.input-box > input[type=password].cbs-input.valid,
+.input-box > input[type=email].cbs-input.valid{
+	border-bottom: 3px solid rgb(58, 158, 66) !important;
+}
+/* error */
+.input-box > input[type=text].cbs-input.error,
+.input-box > input[type=password].cbs-input.error,
+.input-box > input[type=email].cbs-input.error{
+	border-bottom: 3px solid red !important;
+}

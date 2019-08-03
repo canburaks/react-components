@@ -12,3 +12,4 @@ export { Dropdown } from "./components/dropdown/dropdown"
 export { Popup } from "./components/popup/popup"
 export { Modal, useModal } from "./components/modal/modal"
 
+export { Input, PasswordInput, Emailnput,UsernameInput } from "./components/forms/auth-form"

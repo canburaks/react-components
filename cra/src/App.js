@@ -12,25 +12,29 @@ import { Popup } from 'cbs-react-components'
 
 //import { IconHome } from 'cbs-react-components/dist/icon'
 import { videos } from "./dev-resources/videos";
-
+import { Input, PasswordInput, Emailnput,UsernameInput } from 'cbs-react-components'
 const App = (props) => {
-	const { isOpen, toggle } = useModal();
+	const [email, setEmail] = useState("")
 
-	function inputHandler(input) {
-		console.log("parent input handler: ", input)
-	}
-
-		return (
-			<div style={{
-				minHeight: "100vh", display: "block", color: "black",
-				backgroundColor: "rgba(240, 240, 240, 0.95)",
-				padding: "5vw"
-			}}>
-
-				<YoutubePlayer videos={videos} />
-				<button className="button-default" onClick={toggle}>Show Modal</button>
-
-			</div>
+	const [username, setUsername] = useState("")
+	const [pass, setPass] = useState("")
+	const [pass2, setPass2] = useState("")
+	console.log(pass, "-", pass2)
+	return (
+		<div style={{
+			minHeight: "100vh", display: "block", color: "black",
+			backgroundColor: "rgba(240, 240, 240, 0.95)",
+			padding: "30vw"
+		}}>
+			<UsernameInput getValue={setUsername} />
+			<Emailnput getValue={setEmail} />
+			<PasswordInput getValue={setPass} />
+			<PasswordInput getValue={setPass2} 
+				label="Re-Password" 
+				validator={e => e===pass}
+				validationMessage="Password doesn't match"
+			/>
+		</div>
 	)
 }
 
