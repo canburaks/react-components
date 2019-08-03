@@ -12,7 +12,7 @@ import { Popup } from 'cbs-react-components'
 
 //import { IconHome } from 'cbs-react-components/dist/icon'
 import { videos } from "./dev-resources/videos";
-import { Input, PasswordInput, Emailnput,UsernameInput } from 'cbs-react-components'
+import { Input, PasswordInput, EmailInput,UsernameInput } from 'cbs-react-components'
 
 
 const App = (props) => {
@@ -29,7 +29,7 @@ const App = (props) => {
 			padding: "30vw"
 		}}>
 			<UsernameInput getValue={setUsername} />
-			<Emailnput getValue={setEmail} />
+			<EmailInput getValue={setEmail} />
 			<PasswordInput getValue={setPass} />
 			<PasswordInput getValue={setPass2} 
 				label="Re-Password" 
