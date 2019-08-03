@@ -16,11 +16,16 @@ import { Input, PasswordInput, EmailInput,UsernameInput } from 'cbs-react-compon
 
 
 const App = (props) => {
+	const { isOpen, toggle } = useModal();
+
+	
 	const [email, setEmail] = useState("")
 
 	const [username, setUsername] = useState("")
 	const [pass, setPass] = useState("")
 	const [pass2, setPass2] = useState("")
+
+	const getError = (e) => console.log("error",e)
 	console.log(pass, "-", pass2)
 	return (
 		<div style={{
@@ -28,14 +33,20 @@ const App = (props) => {
 			backgroundColor: "rgba(240, 240, 240, 0.95)",
 			padding: "30vw"
 		}}>
-			<UsernameInput getValue={setUsername} />
-			<EmailInput getValue={setEmail} />
-			<PasswordInput getValue={setPass} />
-			<PasswordInput getValue={setPass2} 
-				label="Re-Password" 
-				validator={e => e===pass}
-				validationMessage="Password doesn't match"
-			/>
+			<button className="button-default" onClick={toggle}>Show Modal</button>
+			<Modal
+				isOpen={isOpen}
+				toggle={toggle}
+			>			
+				<UsernameInput getValue={setUsername}  getError={getError} />
+				<EmailInput getValue={setEmail}  getError={getError} />
+				<PasswordInput getValue={setPass}  getError={getError} />
+				<PasswordInput getValue={setPass2} 
+					label="Re-Password" 
+					validator={e => e===pass} getError={getError} 
+					validationMessage="Password doesn't match"
+					/>
+			</Modal>
 		</div>
 	)
 }
@@ -65,15 +76,14 @@ var countries = ["Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Angu
 
 /*
 -----FORM----------------
-<UsernameInput getValue={setUsername} />
-<Emailnput getValue={setEmail} />
-<PasswordInput getValue={setPass} />
+<UsernameInput getValue={setUsername}  getError={getError} />
+<EmailInput getValue={setEmail}  getError={getError} />
+<PasswordInput getValue={setPass}  getError={getError} />
 <PasswordInput getValue={setPass2}
 	label="Re-Password"
-	validator={e => e===pass}
+	validator={e => e===pass} getError={getError}
 	validationMessage="Password doesn't match"
-/>
-
+	/>
 
 -----Modal----------------
 import { Modal, useModal } from 'cbs-react-components'

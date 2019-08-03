@@ -40,6 +40,7 @@ export const Input = (props)=>{
 
 
 	props.getValue(inputValue)
+	props.getError && error.length > 0 && props.getError(error)
     return (
         <div className="input-box">
             <label className="cbs-label">{label}</label>
@@ -54,33 +55,36 @@ export const Input = (props)=>{
     )
 }
 
-export const UsernameInput = ({ getValue, label="username", placeholder="Username" }) => (
+export const UsernameInput = ({ getError, getValue, label="username", placeholder="Username" }) => (
 	<Input
 		label={label}
 		type="text"
 		placeholder={placeholder}
 		getValue={getValue}
+		getError={getError}
 		validation={usernameValidator}
 		validationMessage={"Username must be minimum four alphanumeric characters"}
 	/>
 )
 
-export const PasswordInput = ({ getValue, label="password", placeholder ="Password", validator=null, validationMessage=null }) =>(
+export const PasswordInput = ({ getError, getValue, label="password", placeholder ="Password", validator=null, validationMessage=null }) =>(
 	<Input
 		label={label}
 		type="password"
 		placeholder={placeholder}
 		getValue={getValue}
+		getError={getError}
 		validation={validator ? validator : passwordValidator}
 		validationMessage={validationMessage ? validationMessage : "Password must be 8 alphanumeric-uupercase-lowercase."}
 	/>
 )
-export const EmailInput = ({ getValue, label="email", placeholder="@" }) => (
+export const EmailInput = ({ getError, getValue, label="email", placeholder="@" }) => (
 	<Input
 		label={label}
 		type="email"
 		placeholder={placeholder}
 		getValue={getValue}
+		getError={getError}
 		validation={emailValidator}
 		validationMessage={"Please enter a valid mail adress."}
 	/>
