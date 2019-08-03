@@ -1,7 +1,9 @@
 /*SINGLE INPUT ELEMENT */
-.input-box,
+.input-box{
+	width:100%;
+}
 input{
-	width: 100%;
+	width: 90%;
 }
 .input-box{
 	display: flex;
@@ -32,7 +34,6 @@ input{
 .input-box > input[type=text].cbs-input,
 .input-box > input[type=password].cbs-input,
 .input-box > input[type=email].cbs-input{
-	width: 100%;
 	padding: 4px 0;
 	margin: 4px 0;
 	box-sizing: border-box;
