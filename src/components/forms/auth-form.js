@@ -5,7 +5,6 @@ import "./auth-form.css"
 
 
 
-
 export const Input = (props)=>{
     const {
     placeholder = "Input",
