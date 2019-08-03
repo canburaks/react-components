@@ -54,6 +54,7 @@ export const Input = (props)=>{
         </div>
     )
 }
+/*
 
 export const UsernameInput = ({ getError, getValue, label="username", placeholder="Username" }) => (
 	<Input
@@ -115,3 +116,4 @@ function passwordValidator(value) {
 	else return true
 
 }
+*/
