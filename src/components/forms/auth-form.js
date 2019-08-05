@@ -40,7 +40,7 @@ export const Input = (props)=>{
 
 
 	props.getValue(inputValue)
-	props.getError && error.length > 0 && props.getError(error)
+	props.getError &&  props.getError(error)
     return (
         <div className="input-box">
             <label className="cbs-label">{label}</label>
