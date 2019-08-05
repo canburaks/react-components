@@ -1,209 +1,94 @@
-import React from 'react'
-import { useState } from "react";
+import React from 'react';
 
-import "./navbar.css"
-
-export const NavBar = (props) => {
-    const [ toggleOpen, setToggle] = useState(false);
-
-    const BrandItems = props.children.filter(child => Object.getOwnPropertyNames(child.props).includes("brand"))
-    const SearchItem = props.children.filter(child => Object.getOwnPropertyNames(child.props).includes("search"))
-    const RightItems = props.children.filter(child => Object.getOwnPropertyNames(child.props).includes("right"))
-    const LeftItems = props.children.filter(child =>
-        !Object.getOwnPropertyNames(child.props).includes("right") &&
-        !Object.getOwnPropertyNames(child.props).includes("brand") &&
-        !Object.getOwnPropertyNames(child.props).includes("search")
-    )
-
-
-    const className = setClassName()
-    const RightItemsAll = orderRightItems()
-    const RightItemsAllReverse = orderRightItems(true)
-    
-    //console.log("children", props.children)
-
-    
-    function orderRightItems(reverse = false) {
-        var result = [];
-        if (reverse) {
-            if (SearchItem && SearchItem.length > 0) {
-                result = [...SearchItem]
-            }
-            if (RightItems && RightItems.length > 0) {
-                result = [...RightItems, ...result]
-            }
-        }
-        else {
-            if (SearchItem && SearchItem.length > 0) {
-                result = [...SearchItem]
-            }
-            if (RightItems && RightItems.length > 0) {
-                result = [...result, ...RightItems]
-            }
-        }
-        return result
-    }
-
-    function setClassName() {
-        var cls = props.className ? props.className : "";
-        if (props.fixed) {
-            cls = cls + " topnav fixed"
-        }
-        //console.log("cls", cls)
-        return cls + " topnav"
-    }
-
+export const NavBar2 = (props) => {
     return (
-        <nav className={toggleOpen ? `${className} + responsive` : className} id="myTopnav">
-
-            <div className="left-box">
-            {toggleOpen
-                ? <svg onClick={() => setToggle(!toggleOpen)}
-                    className="icon feather feather-more-vertical"
-                    xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
-                    fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
-                >
-                    <line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line>
-                </svg>
-                : <svg onClick={() => setToggle(!toggleOpen)}
-                    className="icon feather feather-more-vertical"
-                    xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
-                    fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
-                >
-                    <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
-                </svg>
-                }
-                {BrandItems.length > 0 && BrandItems[0]}
-                {LeftItems.length > 0 && LeftItems.map(link => link)}
-            </div>
-
-            <div className="right-box">
-                {SearchItem.length > 0 && SearchItem.map(link => link)}
-                {RightItems.length > 0 && RightItems.map(link => link)}
-
-
-            </div>
-
-            {toggleOpen && 
-                <div className="toggle-menu">
-                    {LeftItems.length > 0 && LeftItems.map(link => link)}
-                    {RightItems.length > 0 && RightItems.map(link => link)}
+        <div>
+            <nav className="navigation_1 bg-light pt-30 pb-30 text-center">
+                <div className="container px-xl-0">
+                    <div className="row justify-content-center align-items-center f-16">
+                        <div className="mb-20 mb-lg-0 col-lg-3 text-lg-left">
+                            <a href="#" className="logo link color-main">PIXLY</a>
+                        </div>
+                        <div className="col-lg-6">
+                            <a href="#" className="link color-main mx-15">Movies</a>
+                            <a href="#" className="link color-main mx-15">Lists</a>
+                            <a href="#" className="link color-main mx-15">Directors</a>
+                            <a href="#" className="link color-main mx-15"><i className="fas fa-search"></i></a>
+                        </div>
+                        <div className="mt-20 mt-lg-0 col-lg-3 d-flex flex-wrap justify-content-center justify-content-lg-end align-items-center">
+                            <a href="#" className="mr-20 link color-main">Sign In</a>
+                            <a href="#" className="btn sm action-2 f-16">Sign Up</a>
+                        </div>
+                    </div>
                 </div>
-                }
-        </nav>
-    )
-}
+            </nav>
 
-
-
-export const NavLink = (props) => {
-    //console.log("link",props)
-    function setClassName() {
-        var typeName = props.className ? `${props.className} nav-link` : `nav-link`
-        if (props.brand) {
-            typeName = typeName + " brand"
-        }
-        else if (props.search) {
-            typeName = typeName + " search"
-        }
-        else if (props.right) {
-            typeName = typeName + " right"
-        }
-        else {
-            typeName = typeName + " left"
-        }
-        return typeName
-    }
-    const className = setClassName()
-    return (
-        <div className={className} onClick={props.onClick}>
-            {props.label ? props.label : props.children}
+            <a className="open_menu color-main bg-light radius_full"><i className="fas fa-bars lh-40"></i></a>
         </div>
     )
 }
 
 /*
+import "../desing-modo/css/style.css"
+import "../desing-modo/css/framework.css"
+import "./navbar.css"
 
-
-export const NavBar = (props) => {
-    const [ toggleOpen, setToggle] = useState(false);
-
-    const BrandItems = props.children.filter(child => Object.getOwnPropertyNames(child.props).includes("brand"))
-    const SearchItem = props.children.filter(child => Object.getOwnPropertyNames(child.props).includes("search"))
-    const RightItems = props.children.filter(child => Object.getOwnPropertyNames(child.props).includes("right"))
-    const LeftItems = props.children.filter(child =>
-        !Object.getOwnPropertyNames(child.props).includes("right") &&
-        !Object.getOwnPropertyNames(child.props).includes("brand") &&
-        !Object.getOwnPropertyNames(child.props).includes("search")
-    )
-
-
-    const className = setClassName()
-    const RightItemsAll = orderRightItems()
-    const RightItemsAllReverse = orderRightItems(true)
-
-    //console.log("children", props.children)
-
-
-    function orderRightItems(reverse = false) {
-        var result = [];
-        if (reverse) {
-            if (SearchItem && SearchItem.length > 0) {
-                result = [...SearchItem]
-            }
-            if (RightItems && RightItems.length > 0) {
-                result = [...RightItems, ...result]
-            }
-        }
-        else {
-            if (SearchItem && SearchItem.length > 0) {
-                result = [...SearchItem]
-            }
-            if (RightItems && RightItems.length > 0) {
-                result = [...result, ...RightItems]
-            }
-        }
-        return result
-    }
-
-    function setClassName() {
-        var cls = props.className ? props.className : "";
-        if (props.fixed) {
-            cls = cls + " fixed"
-        }
-        //console.log("cls", cls)
-        return cls + " topnav"
-    }
-
+export const NavBar2 = (props) => {
     return (
-        <nav className={toggleOpen ? `${className} + responsive` : className} id="myTopnav">
-            <div className="nav-left-box">
-                {BrandItems.length > 0 && BrandItems[0]}
-                {LeftItems.length > 0 && LeftItems.map(link => link)}
+        <div>
+            <nav className="navigation_1 bg-light pt-30 pb-30 text-center">
+                <div className="container px-xl-0">
+                    <div className="row justify-content-center align-items-center f-16">
+                        <div className="mb-20 mb-lg-0 col-lg-3 text-lg-left">
+                            <a href="#" className="logo link color-main">PIXLY</a>
+                        </div>
+                        <div className="col-lg-6">
+                            <a href="#" className="link color-main mx-15">Movies</a>
+                            <a href="#" className="link color-main mx-15">Lists</a>
+                            <a href="#" className="link color-main mx-15">Directors</a>
+                            <a href="#" className="link color-main mx-15"><i className="fas fa-search"></i></a>
+                        </div>
+                        <div className="mt-20 mt-lg-0 col-lg-3 d-flex flex-wrap justify-content-center justify-content-lg-end align-items-center">
+                            <a href="#" className="mr-20 link color-main">Sign In</a>
+                            <a href="#" className="btn sm action-2 f-16">Sign Up</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <a className="open_menu color-main bg-light radius_full"><i className="fas fa-bars lh-40"></i></a>
+
+            <div className="navigation_mobile bg-light type2">
+                <a className="close_menu color-main"><i className="fas fa-times"></i></a>
+                <div className="px-40 pt-60 pb-60 text-center inner">
+
+                    <div><a href="#" className="f-heading f-22 link color-main mb-20">Home</a></div>
+
+                    <div><a href="#" className="f-heading f-22 link color-main mb-20">Popular</a></div>
+
+                    <div><a href="#" className="f-heading f-22 link color-main mb-20">Recent</a></div>
+
+                    <div><a href="#" className="f-heading f-22 link color-main mb-20">Featured</a></div>
+
+                    <div><a href="#" className="f-heading f-22 link color-main mb-20">Designers</a></div>
+
+                    <div><a href="#" className="f-heading f-22 link color-main mb-20">Team</a></div>
+                    <div><a href="#" className="f-12 link color-main op-7 text-uppercase sp-20 mb-20">Help</a></div>
+                    <div><a href="#" className="f-12 link color-main op-7 text-uppercase sp-20 mb-20">F.A.Q.</a></div>
+                    <div><a href="#" className="f-12 link color-main op-7 text-uppercase sp-20 mb-20">Support</a></div>
+                    <div><a href="#" className="f-12 link color-main op-7 text-uppercase sp-20 mb-20">About Us</a></div>
+                    <div><a href="#" className="f-12 link color-main op-7 text-uppercase sp-20 mb-20">Blog</a></div>
+                    <div><a href="#" className="f-12 link color-main op-7 text-uppercase sp-20 mb-20">Careers</a></div>
+                    <div className="socials mt-60">
+                        <a href="#" target="_blank" className="link color-main f-18 mx-10"><i className="fab fa-twitter"></i></a>
+                        <a href="#" target="_blank" className="link color-main f-18 mx-10"><i className="fab fa-facebook"></i></a>
+                        <a href="#" target="_blank" className="link color-main f-18 mx-10"><i className="fab fa-dribbble"></i></a>
+                        <a href="#" target="_blank" className="link color-main f-18 mx-10"><i className="fab fa-instagram"></i></a>
+                        <a href="#" target="_blank" className="link color-main f-18 mx-10"><i className="fab fa-behance"></i></a>
+                    </div>
+                </div>
             </div>
-
-
-            <div className="nav-right-box">
-                {!toggleOpen && RightItemsAll
-                    ? RightItemsAll.map(link => link)
-                    : RightItemsAllReverse.map(link => link)
-                }
-            </div>
-
-
-            <svg onClick={() => setToggle(!toggleOpen )}
-                className="icon feather feather-more-vertical"
-                xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
-                fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
-            >
-                <circle cx="12" cy="12" r="1"></circle>
-                <circle cx="12" cy="5" r="1"></circle>
-                <circle cx="12" cy="19" r="1"></circle>
-            </svg>
-
-        </nav>
+        </div>
     )
 }
-
-
 */

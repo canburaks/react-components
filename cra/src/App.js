@@ -2,24 +2,25 @@ import React from "react";
 import { useState } from "react";
 
 import { YoutubePlayer, SideNavButtons, SideButton, SearchBox, Modal, useModal } from 'cbs-react-components'
-//import { NavBar, NavLink } from 'cbs-react-components'
-import { ProgressBar, CircularProgress } from 'cbs-react-components'
-import { Tooltip } from 'cbs-react-components'
+//import { ProgressBar, CircularProgress } from 'cbs-react-components'
+//import { Tooltip } from 'cbs-react-components'
 //import { TransparentText } from 'cbs-react-components'
 //import { TextCollapse } from 'cbs-react-components'
 //import { Dropdown } from 'cbs-react-components'
-import { Popup } from 'cbs-react-components'
+//import { Popup } from 'cbs-react-components'
+import { NavBar, NavLink } from 'cbs-react-components'
 
 //import { IconHome } from 'cbs-react-components/dist/icon'
-import { videos } from "./dev-resources/videos";
+//import { videos } from "./dev-resources/videos";
 //import { Input, PasswordInput, EmailInput,UsernameInput } from 'cbs-react-components'
-import { Input } from 'cbs-react-components'
+//import { Input } from 'cbs-react-components'
+//import { NavBar2, LandingPage, Footer } from 'cbs-react-components'
+//var critical = require('critical');
 
 
 const App = (props) => {
-	const { isOpen, toggle } = useModal();
 
-	
+	/*
 	const [email, setEmail] = useState("")
 
 	const [username, setUsername] = useState("")
@@ -28,33 +29,36 @@ const App = (props) => {
 
 	const getError = (e) => console.log("error",e)
 	console.log(pass, "-", pass2)
+	*/
 	return (
-		<div style={{
-			minHeight: "100vh", display: "block", color: "black",
-			backgroundColor: "rgba(240, 240, 240, 0.95)",
-			padding: "30vw"
-		}}>
-			<button className="button-default" onClick={toggle}>Show Modal</button>
-			<Modal
-				isOpen={isOpen}
-				toggle={toggle}
-			>			
-				<Input
-					label={label}
-					type="password"
-					placeholder={placeholder}
-					getValue={getValue}
-					getError={getError}
-					validation={validator ? validator : passwordValidator}
-					validationMessage={validationMessage ? validationMessage : "Password must be 8 alphanumeric-uupercase-lowercase."}
-				/>
-			</Modal>
-		</div>
+		<div style={{minHeight: "150vh", display: "block", color: "black",backgroundColor: "rgba(240, 240, 240, 0.05)"}}>
+			<NavBar fixed>
+				<NavLink brand>
+					<a href="/home/">Brand Name</a>
+				</NavLink>
+
+				<NavLink >
+					<a href="/link1">link1</a>
+				</NavLink>
+
+				<NavLink search>
+					<SearchBox
+						class="static"
+						item={{ image: "poster", text: "name" }}
+						query={query}
+						onClick={(value) => console.log("parent onClick ->", value)}
+						onSubmit={values => console.log("parent onSubmit ->", values)}
+						animate
+					/>
+				</NavLink>
+				<NavLink right onClick={() => alert("asd")}>
+					<button href="/right-button">right-link2</button>
+				</NavLink>
+			</NavBar>		</div>
 	)
 }
 
 export default App
-
 
 function query(input) {
 	return new Promise(resolve => {
@@ -70,13 +74,13 @@ var movies = [
 	{ name: "Space Odyssey", id: 924, poster: "2001.jpg" },
 	{ name: "Amarcord", id: 7089, poster: "https://cbs-static.s3.amazonaws.com/static/media/posters/7089/7089-tmdb.jpg" },
 	{ name: "Amarcord", id: 7089, poster: "https://cbs-static.s3.amazonaws.com/static/media/posters/7089/7089-tmdb.jpg" }
-
+	
 ]
 
-/*An array containing all the country names in the world:*/
 var countries = ["Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Anguilla", "Antigua & Barbuda", "Argentina", "Armenia", "Aruba", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bermuda", "Bhutan", "Bolivia", "Bosnia & Herzegovina", "Botswana", "Brazil", "British Virgin Islands", "Brunei", "Bulgaria", "Burkina Faso", "Burundi", "Cambodia"];
-
 /*
+
+
 <Input
 	label={label}
 	type="password"
