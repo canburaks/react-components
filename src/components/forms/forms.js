@@ -1,7 +1,7 @@
  import React from 'react';
 import { useState } from "react";
 
-import "./auth-form.css"
+import "./forms.css"
 
 
 
@@ -18,7 +18,6 @@ export const Input = (props)=>{
 	const [inputValue, setInputValue] = useState("")
 	const [error, setError] = useState("")
 
-    //const inputClassname = icon!==null ? `form-input cbs-input icon ${className}` : `form-input cbs-input ${className}`
 	const inputHandler = e =>{
 		setInputValue(e.target.value);
 		if (validation && validationMessage){
@@ -33,7 +32,6 @@ export const Input = (props)=>{
 		cls = (inputValue.length > 0 && validation && validation(inputValue)) 
 			? cls + " valid" 
 			: cls
-		//console.log("computed classname: ", cls)
 		return cls
 	}
 	const inputClassname = getInputClassname()
@@ -43,14 +41,14 @@ export const Input = (props)=>{
 	props.getError &&  props.getError(error)
     return (
         <div className="input-box">
-            <label className="cbs-label">{label}</label>
+            {label && <label className="cbs-label">{label}</label>}
             <input required min={4} maxLength={20}
 				className={inputClassname}
                 placeholder={placeholder} type={type}
 				value={inputValue}
 				onChange={inputHandler}
                 />
-			<label className="cbs-label-error">{error}</label>
+			{validatin && validationMessage && <label className="cbs-label-error">{error}</label>}
         </div>
     )
 }

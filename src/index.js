@@ -12,4 +12,4 @@ export { Dropdown } from "./components/dropdown/dropdown"
 export { Popup } from "./components/popup/popup"
 export { Modal, useModal } from "./components/modal/modal"
 
-export { Input } from "./components/forms/auth-form"
+export { Input } from "./components/forms/forms"
