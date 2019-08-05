@@ -1,7 +1,7 @@
  import React from 'react';
 import { useState } from "react";
 
-import "./forms.css"
+import "./input.css"
 
 
 
@@ -48,7 +48,7 @@ export const Input = (props)=>{
 				value={inputValue}
 				onChange={inputHandler}
                 />
-			{validatin && validationMessage && <label className="cbs-label-error">{error}</label>}
+			{(validation && validationMessage) && <label className="cbs-label-error">{error}</label>}
         </div>
     )
 }
