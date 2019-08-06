@@ -23,7 +23,7 @@
         min-width:100%;
     }
 
-svg{
+#video-player-box svg{
     border-radius:50%;
     cursor: pointer;
 }
