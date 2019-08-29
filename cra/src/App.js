@@ -9,9 +9,10 @@ import { YoutubePlayer, SideNavButtons, SideButton, SearchBox, Modal, useModal }
 //import { Dropdown } from 'cbs-react-components'
 //import { Popup } from 'cbs-react-components'
 import { NavBar, NavLink } from 'cbs-react-components'
+//import { Dnd } from 'cbs-react-components'
 
 //import { IconHome } from 'cbs-react-components/dist/icon'
-//import { videos } from "./dev-resources/videos";
+import { videos } from "./dev-resources/videos";
 //import { Input, PasswordInput, EmailInput,UsernameInput } from 'cbs-react-components'
 //import { Input } from 'cbs-react-components'
 //import { NavBar2, LandingPage, Footer } from 'cbs-react-components'
@@ -31,30 +32,9 @@ const App = (props) => {
 	console.log(pass, "-", pass2)
 	*/
 	return (
-		<div style={{minHeight: "150vh", display: "block", color: "black",backgroundColor: "rgba(240, 240, 240, 0.05)"}}>
-			<NavBar fixed>
-				<NavLink brand>
-					<a href="/home/">Brand Name</a>
-				</NavLink>
-
-				<NavLink >
-					<a href="/link1">link1</a>
-				</NavLink>
-
-				<NavLink search>
-					<SearchBox
-						class="static"
-						item={{ image: "poster", text: "name" }}
-						query={query}
-						onClick={(value) => console.log("parent onClick ->", value)}
-						onSubmit={values => console.log("parent onSubmit ->", values)}
-						animate
-					/>
-				</NavLink>
-				<NavLink right onClick={() => alert("asd")}>
-					<button href="/right-button">right-link2</button>
-				</NavLink>
-			</NavBar>		</div>
+		<div style={{minHeight: "150vh",padding:"10vh 2vh", display: "block", color: "black",backgroundColor: "rgba(240, 240, 240, 0.05)"}}>
+			<YoutubePlayer videos={videos} title="Ida Videos"/>
+		</div>
 	)
 }
 
@@ -72,7 +52,7 @@ function query(input) {
 
 var movies = [
 	{ name: "Space Odyssey", id: 924, poster: "2001.jpg" },
-	{ name: "Amarcord", id: 7089, poster: "https://cbs-static.s3.amazonaws.com/static/media/posters/7089/7089-tmdb.jpg" },
+	{ name: "Amarcord", id: 7088, poster: "https://cbs-static.s3.amazonaws.com/static/media/posters/7089/7089-tmdb.jpg" },
 	{ name: "Amarcord", id: 7089, poster: "https://cbs-static.s3.amazonaws.com/static/media/posters/7089/7089-tmdb.jpg" }
 	
 ]
