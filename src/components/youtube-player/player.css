@@ -209,10 +209,11 @@ p.list-item-text{
 	}
 	#title{
 		border-bottom: 1px solid rgba(180, 180, 180, 0.57);
-		padding: 16px 8px;
+		padding: 8px 8px;
 		margin: 0;
 		text-align: center;
-		height:50px;
+		height:40px;
+		font-size: 18px;
 	}
 }
 
