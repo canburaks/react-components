@@ -1,5 +1,8 @@
 
 export { YoutubePlayer } from "./components/youtube-player/youtube-player";
+//export { YoutubePlayer } from "./components/youtube-player/oldplayer";
+
+
 export { NavBar, NavLink } from "./components/navbar-old/navbar"
 export { NavBar2 } from "./components/navbar/navbar"
 
@@ -18,4 +21,5 @@ export { Input } from "./components/forms/input"
 export { LandingPage} from "./components/landing/landing-page"
 export { Footer } from "./components/footer/footer"
 
+export { Dnd } from "./components/dnd/dnd"
 
