@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import  "./player.css"
 
 
@@ -17,6 +17,29 @@ export const YoutubePlayer = (props) =>{
 
     if (initialVideos.length === 0) return <div></div>
 
+    
+    useEffect(()=>{
+        function setHeight(){
+            var playerbox = document.querySelector("#player-box")
+            
+            var playersizes = playerbox.getBoundingClientRect()
+            var width = playersizes.width
+            if (width > 980){
+                var player = document.querySelector("#player")
+                var playlist = document.querySelector("#playlist")
+
+                console.log("sett",playersizes.width)
+                player.style.height = `${playersizes.width * 0.5625}px`
+                playlist.style.height = `${(playersizes.width * 0.5625) + 50}px`
+
+            }
+        }
+        setHeight()
+        window.addEventListener("resize", setHeight)
+        return () =>  window.removeEventListener("resize", setHeight)
+    })
+    
+    //console.log("inner",window.innerWidth)
     return(
         <div theme={theme} id="video-player-box">
             <div id="player-box">
