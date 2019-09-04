@@ -10,7 +10,7 @@ export const YoutubePlayer = (props) =>{
         ? [...processVideos(props.videos)]
         : []
     const initialActive = props.activeVideo 
-        ? props.activeVideo 
+        ? processVideos([props.activeVideo])[0]
         : initialVideos.length > 0 
             ? initialVideos[0] 
             : {}
