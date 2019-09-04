@@ -9,7 +9,11 @@ export const YoutubePlayer = (props) =>{
     const initialVideos = (props.videos && props.videos.length > 0) 
         ? [...processVideos(props.videos)]
         : []
-    const initialActive = initialVideos.length > 0 ? initialVideos[0] : {}
+    const initialActive = props.activeVideo 
+        ? props.activeVideo 
+        : initialVideos.length > 0 
+            ? initialVideos[0] 
+            : {}
 
     const [ videos, setVideos ] = useState(initialVideos)
     const [ activeVideo, setActiveVideo ] = useState(initialActive)
