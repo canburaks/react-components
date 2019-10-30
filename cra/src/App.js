@@ -1,26 +1,18 @@
 import React from "react";
 import { useState } from "react";
 
-import { YoutubePlayer, SideNavButtons, SideButton, SearchBox, Modal, useModal } from 'cbs-react-components'
+import { YoutubePlayer, SearchBox, Modal, useModal, NavBar } from 'cbs-react-components'
 //import { ProgressBar, CircularProgress } from 'cbs-react-components'
-//import { Tooltip } from 'cbs-react-components'
-//import { TransparentText } from 'cbs-react-components'
 //import { TextCollapse } from 'cbs-react-components'
-//import { Dropdown } from 'cbs-react-components'
-//import { Popup } from 'cbs-react-components'
-import { NavBar, NavLink } from 'cbs-react-components'
-//import { Dnd } from 'cbs-react-components'
 
-//import { IconHome } from 'cbs-react-components/dist/icon'
+
 import { videos } from "./dev-resources/videos";
 //import { Input, PasswordInput, EmailInput,UsernameInput } from 'cbs-react-components'
 //import { Input } from 'cbs-react-components'
-//import { NavBar2, LandingPage, Footer } from 'cbs-react-components'
-//var critical = require('critical');
 
 
 const App = (props) => {
-
+	const styles = {minHeight: "150vh",padding:"0 2vh", display: "block", color: "black",backgroundColor: "rgba(140, 140, 140, 0.25)"}
 	/*
 	const [email, setEmail] = useState("")
 
@@ -32,8 +24,9 @@ const App = (props) => {
 	console.log(pass, "-", pass2)
 	*/
 	return (
-		<div style={{minHeight: "150vh",padding:"10vh 2vh", display: "block", color: "black",backgroundColor: "rgba(240, 240, 240, 0.05)"}}>
-			<YoutubePlayer videos={videos} title="Ida Videos"/>
+		<div style={styles}>
+		<NavBar {...props} />
+			
 		</div>
 	)
 }
@@ -58,6 +51,7 @@ var movies = [
 ]
 
 var countries = ["Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Anguilla", "Antigua & Barbuda", "Argentina", "Armenia", "Aruba", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bermuda", "Bhutan", "Bolivia", "Bosnia & Herzegovina", "Botswana", "Brazil", "British Virgin Islands", "Brunei", "Bulgaria", "Burkina Faso", "Burundi", "Cambodia"];
+
 /*
 
 
@@ -103,39 +97,7 @@ const App = (props) => {
 		</div>
 	)
 }
------Popup---------------
-<Popup 
-	side={"top"} 
-	text={"tooltip"} 
-	className="my-classname" 
-	title="click" 
-	id="my-id"
-	>
-	top
-</Popup>
 
-
-<Popup side={"top"} text={"tooltip"} className="my-classname" title="click" id="my-id">top</Popup>
-<br/>
-<Popup side={"left"} text={"tooltip"}>left</Popup>
-<br/>
-<Popup side={"right"} text={"tooltip"}>right</Popup>
-<br/>
-<Popup side={"bottom"} text={"tooltip"}>bottom</Popup>
-
-
------DropDown----------------
-<Dropdown
-	horizontal={-60}
-	self={<IconHome size={24} />}
-	>
-	<a href="#">Link 1</a>
-	<a href="#">Link 2</a>
-	<a href="#">Link 3</a>
-</Dropdown>
-
-
-------------------------------
 
 ---Collapsible Text---------------------
 <TextCollapse
@@ -174,26 +136,6 @@ const App = (props) => {
 
 
 
------Tooltip--------------------
-<Tooltip
-	text={"tooltiiiipp" }
-	side={"bottom"}
-	backgroundColor={"black"}
-	color={"white"}
-	fontSize={16}
->
------------------------------------
-
------TransparentText--------------
-<TransparentText
-	text={"CBS"}
-	height={200}
-	foregroundColor={"white"}
-	backgroundColor={"linear-gradient(90deg, #440154, #482475, #414487, #355f8d, #2a788e, #21908d, #22a884, #42be71, #7ad151, #bddf26, #bddf26)"}
-/>
------------------------------------
-
-
 ------ProgressBar--------
 <CircularProgress
 	value={65} 							//required
@@ -221,33 +163,6 @@ const App = (props) => {
 	percent								//options-> percent,onlyvalue nolabel
 />
 -----------------------------------------------
-
-
----- NavBar------------------------------------
-<NavBar fixed>
-	<NavLink brand>
-		<a href="/home/">Brand Name</a>
-	</NavLink>
-
-	<NavLink >
-		<a href="/link1">link1</a>
-	</NavLink>
-
-	<NavLink search>
-		<SearchBox
-		class="static"
-		item={{ image: "poster", text: "name" }}
-		query={query}
-		onClick={(value) => console.log("parent onClick ->", value)}
-		onSubmit={values => console.log("parent onSubmit ->", values)}
-		animate
-		/>
-	</NavLink>
-	<NavLink right onClick={() => alert("asd")}>
-		<button href="/right-button">right-link2</button>
-	</NavLink>
-</NavBar>
----------------------------------------------------
 
 
 ---- SearchBox ------------------------------------
@@ -283,13 +198,4 @@ const App = (props) => {
 	/>
 </div>
 ------------------------------------------------------
-
----- SideNavButton------------------------------------
-<SideNavButtons>
-	<SideButton before={<p>?:</p>}>Lists</SideButton>
-	<SideButton styles={{backgroundColor:"red"}}> Directors</SideButton>
-	<SideButton className="my-classname">Movies</SideButton>
-</SideNavButtons>
-----------------------------------------------
-
 */

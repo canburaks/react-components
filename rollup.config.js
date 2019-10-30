@@ -45,41 +45,5 @@ export default
         'node_modules/react-is/index.js': ['isValidElementType']
       }
     })]
-  },
-    {
-      input: 'src/icons/index.js',
-      output: [
-        {
-          file: pkg["icon-main"],
-          format: 'cjs',
-          sourcemap: true
-        },
-        {
-          file: pkg["icon-module"],
-          format: 'es',
-          sourcemap: true
-        }],
-      external: [
-        'react',
-        'react-dom',
-      ],
-      plugins: [
-        external(),
-        postcss({
-          extensions: ['.css'],
-        }),
-        url(),
-        svgr(),
-        babel({
-          exclude: 'node_modules/**',
-          plugins: ['external-helpers']
-        }),
-        resolve(),
-        commonjs({
-          include: 'node_modules/**',
-          namedExports: {
-            'node_modules/react-is/index.js': ['isValidElementType']
-          }
-        })]
-    }
+  }
   ]
