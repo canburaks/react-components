@@ -97,7 +97,7 @@ export const YoutubePlayer = (props) =>{
                         <div title={v.title}
                             className={v === activeVideo ?"active-list-item list-item" : "list-item"}
                             onClick={() => setActiveVideo(v)}
-                            key={v.id + i}
+                            key={v.title.slice(0,15) + i}
                             >
                             <img  alt={v.title} title={v.title} src={v.thumb}  className="list-item-thumb" />
                             <p className="list-item-text">{v.title}</p>
