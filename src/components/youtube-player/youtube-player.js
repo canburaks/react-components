@@ -86,7 +86,7 @@ export const YoutubePlayer = (props) =>{
                         }
 
 
-                    <p  id="video-title">{activeVideo.title}</p>
+                    <h2  id="video-title">{activeVideo.title}</h2>
             </div>
             </div>
             
@@ -100,7 +100,7 @@ export const YoutubePlayer = (props) =>{
                             key={v.title.slice(0,15) + i}
                             >
                             <img  alt={v.title} title={v.title} src={v.thumb}  className="list-item-thumb" />
-                            <p className="list-item-text">{v.title}</p>
+                            <h3 className="list-item-text">{v.title}</h3>
                         </div>
                     ))}
                 </div>
