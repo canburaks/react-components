@@ -25,7 +25,7 @@ const App = (props) => {
 	*/
 	return (
 		<div style={styles}>
-		<NavBar {...props} />
+		<YoutubePlayer />
 			
 		</div>
 	)
