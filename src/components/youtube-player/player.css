@@ -73,6 +73,7 @@
 	margin:16px 24px;
 	text-align: center;
 	width: 100%;
+	font-size:14px !important;
 }
 #playlist{
 	display: flex;
@@ -134,10 +135,11 @@
     width:90px !important;
 
 }
-.list-item-text{
+h3.list-item-text{
 	width:90%;
 	font-size:12px;
 	padding-left:8px;
+	margin-top: 8px !important;
     white-space: nowrap; 
     overflow: hidden;
     text-align:center;
