@@ -49,7 +49,7 @@ export const Input = (props)=>{
                 placeholder={placeholder} type={type}
 				value={inputValue}
 				onChange={inputHandler}
-				{}
+
                 />
 			{(validation && validationMessage) && <label className="cbs-label-error">{error}</label>}
         </div>
