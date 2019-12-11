@@ -14,7 +14,6 @@ export const Input = (props)=>{
 	validation=null,
 	validationMessage=null,
 	maxLength=20,
-	...props
     } = props
 
 	const [inputValue, setInputValue] = useState("")
