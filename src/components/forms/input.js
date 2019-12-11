@@ -14,6 +14,7 @@ export const Input = (props)=>{
 	validation=null,
 	validationMessage=null,
 	maxLength=20,
+	minLength=4,
     } = props
 
 	const [inputValue, setInputValue] = useState("")
@@ -43,7 +44,7 @@ export const Input = (props)=>{
     return (
         <div className="input-box">
             {label && <label className="cbs-label">{label}</label>}
-            <input required min={4} maxLength={maxLength}
+            <input required min={4} maxLength={maxLength} minLength={minLength}
 				className={inputClassname}
                 placeholder={placeholder} type={type}
 				value={inputValue}
